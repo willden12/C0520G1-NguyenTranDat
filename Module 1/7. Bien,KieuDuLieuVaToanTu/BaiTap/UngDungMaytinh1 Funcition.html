@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<input id="dulieu1" type="text">
+<input id="dulieu2" type="text"><br>
+
+<input type="button" onclick="tinh('+')" value="Addition(+)">
+<input type="button" onclick="tinh('-')" value="Subtraction(-)">
+<input type="button" onclick="tinh('*')" value="Multiplication(*)">
+<input type="button" onclick="tinh('/')" value="Division(/)">
+<p id="kq"></p>
+<script>
+    function tinh(phepTinh) {
+        let so1 = parseFloat(document.getElementById('dulieu1').value);
+        let so2 = parseFloat(document.getElementById('dulieu2').value);
+        let ketqua1 = so1 + so2;
+        let ketqua2 = so1 - so2;
+        let ketqua3 = so1 * so2;
+        let ketqua4 = so1 / so2;
+
+        if (phepTinh === '+') {
+            document.getElementById('kq').innerHTML = ketqua1
+        } else if (phepTinh === '-') {
+            document.getElementById('kq').innerHTML = ketqua2
+        } else if (phepTinh === '*') {
+            document.getElementById('kq').innerHTML = ketqua3
+        } else {
+            document.getElementById('kq').innerHTML = ketqua4
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

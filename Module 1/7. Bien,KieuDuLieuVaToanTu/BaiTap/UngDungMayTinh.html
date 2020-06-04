@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<input id="dulieu1" type="text">
+<input id="dulieu2" type="text"><br>
+
+<input type="button" onclick="cong()" value="Addition(+)">
+<input type="button" onclick="tru()" value="Subtraction(-)">
+<input type="button" onclick="nhan()" value="Multiplication(*)">
+<input type="button" onclick="chia()" value="Division(/)">
+<p id="kq"></p>
+<script>
+    function cong() {
+        let so1 = parseFloat(document.getElementById('dulieu1').value);
+        let so2 = parseFloat(document.getElementById('dulieu2').value);
+        let ketqua = so1 + so2;
+        document.getElementById("kq").innerHTML = ketqua
+    }
+    function tru() {
+        let so1 = parseFloat(document.getElementById('dulieu1').value);
+        let so2 = parseFloat(document.getElementById('dulieu2').value);
+        let ketqua = so1 - so2;
+        document.getElementById("kq").innerHTML = ketqua
+    }
+    function nhan() {
+        let so1 = parseFloat(document.getElementById('dulieu1').value);
+        let so2 = parseFloat(document.getElementById('dulieu2').value);
+        let ketqua = so1 * so2;
+        document.getElementById("kq").innerHTML = ketqua;
+    }
+    function chia() {
+        let so1 = parseFloat(document.getElementById('dulieu1').value);
+        let so2 = parseFloat(document.getElementById('dulieu2').value);
+        let ketqua = so1 / so2;
+        document.getElementById("kq").innerHTML = ketqua;
+    }
+</script>
+
+
+</body>
+</html>

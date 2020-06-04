@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let year = parseInt(prompt('nhập số năm'))
+    let nhuan = false;
+
+    let nhuan4 = year % 4 == 0;
+    let nhuan100 = year % 100 == 0;
+    let nhuan400 = year % 400 == 0;
+    if (nhuan4) {
+        if (nhuan100) {
+            if (nhuan400) {
+                nhuan = true;
+            }
+        } else {
+            nhuan = true;
+        }
+    }
+
+    if (nhuan) {
+        alert(year + " is a leap year");
+    } else {
+        alert(year + " is NOT a leap year");
+    }
+
+
+</script>
+
+
+</body>
+</html>

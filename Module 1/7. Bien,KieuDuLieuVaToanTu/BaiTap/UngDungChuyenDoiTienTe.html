@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p>Amount <br><input id="dulieutuAmount" type="text"></p>
+    <p>From Currency<br>
+        <select id="dulieu1">
+        <option value="VN">Việt Nam</option>
+        <option value="USD">Mỹ</option>
+    </select></p>
+    <p>To Currency<br>
+        <select id="dulieu2">
+            <option value="USD">Mỹ</option>
+            <option value="VN">Việt Nam</option>
+        </select>
+    </p>
+    <input type="button" onclick="f()" value="Convert"/>
+</form>
+<p id="kt"></p>
+<script>
+    function f() {
+        let sotiennhap = parseInt(document.getElementById('dulieutuAmount').value);
+        let from = document.getElementById('dulieu1').value;
+        let to = document.getElementById('dulieu2').value;
+        let ketqua = 0;
+        if (from == "VN"&&to == "USD"){
+            ketqua= sotiennhap/23000;
+        }else if(to == "VN"&&from == "USD"){
+            ketqua=sotiennhap*23000;
+        }else {
+            alert('bạn chọn lại ')
+        }
+        document.getElementById("kt").innerHTML=ketqua;
+
+    }
+
+</script>
+</body>
+</html>

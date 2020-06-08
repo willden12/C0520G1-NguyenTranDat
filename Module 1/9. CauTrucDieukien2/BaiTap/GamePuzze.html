@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 800px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+
+<button type="button" onclick="c1()"><img id="ah1" src="gamepuzze/funny-cat1_part1x1.jpg"/>
+</button>
+<button type="button" onclick="c2()"><img id="ah2" src="gamepuzze/funny-cat1_part2x1.jpg"/>
+</button>
+<button type="button" onclick="c3()"><img id="ah3" src="gamepuzze/funny-cat1_part3x1.jpg"/>
+</button>
+<button type="button" onclick="c4()"><img id="ah4" src="gamepuzze/funny-cat1_part4x1.jpg"/>
+</button>
+<button type="button" onclick="c5()"><img id="ah5" src="gamepuzze/funny-cat1_part5x1.jpg"/>
+</button>
+<script>
+
+
+    function c1() {
+        let hinh1 = document.getElementById('ah1').getAttribute('src');
+        if (hinh1 === "gamepuzze/funny-cat1_part1x1.jpg") {
+            document.getElementById('ah1').src = "gamepuzze/monkey_part1x1.jpg"
+        } else if (hinh1 === "gamepuzze/monkey_part1x1.jpg") {
+            document.getElementById('ah1').src = "gamepuzze/panda_swap_part1x1.jpg"
+        } else if (hinh1 === "gamepuzze/panda_swap_part1x1.jpg") {
+            document.getElementById('ah1').src = "gamepuzze/funny-cat1_part1x1.jpg"
+        }
+    }
+
+    function c2() {
+        let hinh2 = document.getElementById('ah2').getAttribute('src');
+        if (hinh2 === "gamepuzze/funny-cat1_part2x1.jpg") {
+            document.getElementById('ah2').src = "gamepuzze/monkey_part2x1.jpg"
+        } else if (hinh2 === "gamepuzze/monkey_part2x1.jpg") {
+            document.getElementById('ah2').src = "gamepuzze/panda_swap_part2x1.jpg"
+        } else if (hinh2 === "gamepuzze/panda_swap_part2x1.jpg") {
+            document.getElementById('ah2').src = "gamepuzze/funny-cat1_part2x1.jpg"
+        }
+    }
+
+    function c3() {
+        let hinh3 = document.getElementById('ah3').getAttribute('src');
+        if (hinh3 === "gamepuzze/funny-cat1_part3x1.jpg") {
+            document.getElementById('ah3').src = "gamepuzze/monkey_part3x1.jpg"
+        } else if (hinh3 === "gamepuzze/monkey_part3x1.jpg") {
+            document.getElementById('ah3').src = "gamepuzze/panda_swap_part3x1.jpg"
+        } else if (hinh3 === "gamepuzze/panda_swap_part3x1.jpg") {
+            document.getElementById('ah3').src = "gamepuzze/funny-cat1_part3x1.jpg"
+        }
+    }
+
+    function c4() {
+        let hinh4 = document.getElementById('ah4').getAttribute('src');
+        if (hinh4 === "gamepuzze/funny-cat1_part4x1.jpg") {
+            document.getElementById('ah4').src = "gamepuzze/monkey_part4x1.jpg"
+        } else if (hinh4 === "gamepuzze/monkey_part4x1.jpg") {
+            document.getElementById('ah4').src = "gamepuzze/panda_swap_part4x1.jpg"
+        } else if (hinh4 === "gamepuzze/panda_swap_part4x1.jpg") {
+            document.getElementById('ah4').src = "gamepuzze/funny-cat1_part4x1.jpg"
+        }
+    }
+
+    function c5() {
+        let hinh5 = document.getElementById('ah5').getAttribute('src');
+        if (hinh5 === "gamepuzze/funny-cat1_part5x1.jpg") {
+            document.getElementById('ah5').src = "gamepuzze/monkey_part5x1.jpg"
+        } else if (hinh5 === "gamepuzze/monkey_part5x1.jpg") {
+            document.getElementById('ah5').src = "gamepuzze/panda_swap_part5x1.jpg"
+        } else if (hinh5 === "gamepuzze/panda_swap_part5x1.jpg") {
+            document.getElementById('ah5').src = "gamepuzze/funny-cat1_part5x1.jpg"
+        }
+    }
+
+    // function check() {
+    //     if (hinh1 ==) {
+    //         alert(ok)
+    //     }
+    //
+    // }
+    //
+    // check(ok)
+
+
+</script>
+</body>
+</html>

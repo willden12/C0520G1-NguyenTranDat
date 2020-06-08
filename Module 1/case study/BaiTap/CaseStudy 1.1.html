@@ -6,17 +6,57 @@
 </head>
 <body>
 <script>
-    prompt('Nhập tên')
-    prompt('Nhập CMND')
-    prompt('Năm Sinh')
-    prompt('Nhập Email')
-    prompt('Nhập Địa chỉ')
-    prompt('Loại Customer')
-    prompt('Giảm giá')
-    prompt('Số lượng đi kèm')
-    prompt('số ngày thuê')
-    prompt('Loại dịch vụ')
-    prompt('Loại phòng thuê')
+
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let customes;
+    let discount;
+    let people;
+    let rentdays;
+    let servicetype;
+    let kindofroom;
+    let tongtien;
+
+
+
+    name = prompt('Nhập vào họ và tên');
+    cmnd = prompt('Nhập CMND');
+    birthday = prompt('Nhập Năm Sinh');
+    email = prompt('Nhập Email');
+    address = prompt('Nhập Địa chỉ');
+    customes = prompt('Loại Customer(Diamond, Platinum, Gold, Silver, member)');
+    discount = parseInt(prompt('Giảm giá'));
+    people = prompt('Số lượng đi kèm');
+    rentdays = parseInt(prompt('Số ngày thuê'));
+    servicetype = prompt('Loại dịch vụ(Villa, House, Room)');
+    kindofroom = prompt('Loại phòng thuê (Vip, Buisines, Normal)');
+
+    if (servicetype === 'Villa') {
+        tongtien = 500 * rentdays * (1 - discount / 100)
+    } else if (servicetype === 'House') {
+        tongtien = 300 * rentdays * (1 - discount / 100)
+    } else if (servicetype === 'Room') {
+        tongtien = 100 * rentdays * (1 - discount / 100)
+    } else {
+        alert('Nhập lại')
+    }
+
+    alert('Họ và tên :' + name +
+        '\n1.Cmnd : ' + cmnd +
+        '\n2.Ngày sinh : ' + birthday +
+        '\n3.Email : ' + email +
+        '\n4.Địa chỉ : ' + address +
+        '\n5.Loại Customes : ' + customes +
+        '\n6.Giảm giá : ' + discount +
+        '\n7.Số lượng đi kèm : ' + people +
+        '\n8.Số ngày thuê : ' + rentdays +
+        '\n9.Loại dịch vụ : ' + servicetype +
+        '\n10.Loại phòng thuê : ' + kindofroom +
+        '\n11.Tổng tiền phải trả là : ' + tongtien)
+
 
 
 </script>

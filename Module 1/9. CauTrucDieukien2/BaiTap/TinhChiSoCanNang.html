@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let cannang = parseFloat(prompt('Nhập cân nặng của bạn'))
+    let chieucao = parseFloat(prompt('Nhập chiều cao của bạn'))
+    let bMi = cannang / (chieucao * chieucao)
+    if (bMi < 18)
+        document.write("Underweight");
+    else if (bMi < 25.0)
+        document.write("Normal");
+    else if (bMi < 30.0)
+        document.write("Overweight");
+    else
+        document.write("Obese");
+</script>
+
+</body>
+</html>

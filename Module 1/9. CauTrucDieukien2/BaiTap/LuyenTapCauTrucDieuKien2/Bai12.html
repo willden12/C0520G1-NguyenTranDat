@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sotien = parseFloat(prompt("Số tiền vay"));
+    let soThangVay = parseInt(prompt("Số tháng vay"));
+
+
+    if (soThangVay <= 12) {
+        let tong = sotien * (0.06/12) * soThangVay;
+        alert("Tổng lãi của bạn là " + tong)
+    }else if (soThangVay <=24){
+        let tong1 = sotien * (0.065/12) * soThangVay;
+        alert("Tổng lãi của bạn là " + tong1)
+    }
+
+
+</script>
+
+</body>
+</html>

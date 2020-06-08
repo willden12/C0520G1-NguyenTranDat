@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input id="th" type="text"/>
+    <input type="button" onclick="dat()" value="Tính số ngày">
+    <p id="kq"></p>
+    <script>
+        function dat() {
+            let so = parseInt(document.getElementById('th').value);
+            switch (so) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById('kq').innerHTML = 31;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.getElementById('kq').innerHTML = 30;
+                    break;
+                case 2:
+                    document.getElementById('kq').innerHTML = '28,29';
+                    break;
+                default:
+                    alert('Nhập lại')
+
+            }
+        }
+    </script>
+</form>
+
+</body>
+</html>

@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+    let text = " ";
+    for (let i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            text += "FiZZBuZZ"+"<br>"
+        } else if (i % 3 !== 0 && i % 5 === 0) {
+            text += "BuZZ"+"<br>"
+        } else if (i % 3 === 0 && i % 5 !== 0) {
+            text += "FiZZ"+"<br>"
+        } else {
+            text += i+'<br>'
+        }
+    }document.write(text)
+
+</script>
+
 </body>
 </html>

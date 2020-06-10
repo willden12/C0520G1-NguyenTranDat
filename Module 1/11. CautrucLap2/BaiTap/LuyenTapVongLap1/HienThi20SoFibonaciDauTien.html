@@ -11,13 +11,15 @@
     let h;
     let kq = "0,1";
     let number = parseInt(prompt("Nhập sô"));
-    for (let i = 1; i < number-1; i++) {
+    for (let i = 1; i < number; i++) {
         h = f1 + f2;
         f2 = f1;
         f1 = h;
         kq += "," + h;
     }
     document.write(kq)
+
+
 </script>
 
 </body>

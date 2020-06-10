@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let cout = " ";
+    let a;
+    let b;
+    for (a = 1; a <= 5; a++) {
+        for (b = 5; b >= 1; b--) {
+            if (b > a) {
+                cout += "&nbsp&nbsp"
+            }else {
+            cout += "*"}
+        }cout+="<br>"
+    }document.write(cout)
+
+
+</script>
+
 </body>
 </html>

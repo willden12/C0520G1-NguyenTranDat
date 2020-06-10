@@ -6,9 +6,26 @@
 </head>
 <body>
 <script>
-    let number = "5";
-    let count =0;
-    let n =2
+    let number = parseInt(prompt("Nhập số nguyên tố"));
+    let count = 0;
+    let ketQua = " ";
+    let n = 2;
+    while (count < number) {
+        let check = true;
+        for (let i = 2; i < n; i++) {
+            if (n % i === 0) {
+                check = false;
+                break
+            }
+        }
+        if (check) {
+            ketQua += n + ",";
+            count++
+        }
+        n++
+    }
+    alert(ketQua)
+
 
 </script>
 

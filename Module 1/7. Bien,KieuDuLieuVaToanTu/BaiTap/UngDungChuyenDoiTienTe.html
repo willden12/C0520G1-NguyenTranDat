@@ -18,18 +18,18 @@
             <option value="VN">Việt Nam</option>
         </select>
     </p>
-    <input type="button" onclick="f()" value="Convert"/>
+    <input type="button" onclick="click12()" value="Convert"/>
 </form>
 <p id="kt"></p>
 <script>
-    function f() {
+    function click12() {
         let sotiennhap = parseInt(document.getElementById('dulieutuAmount').value);
         let from = document.getElementById('dulieu1').value;
         let to = document.getElementById('dulieu2').value;
         let ketqua = 0;
-        if (from == "VN"&&to == "USD"){
+        if (from === "VN"&&to === "USD"){
             ketqua= sotiennhap/23000;
-        }else if(to == "VN"&&from == "USD"){
+        }else if(to === "VN"&&from === "USD"){
             ketqua=sotiennhap*23000;
         }else {
             alert('bạn chọn lại ')

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = [5, 7, 12,92,34,245,324,262,5,34,26,335,45,3,345,23,4,86,87,5454,4,5];
+    let max = x[0];
+    let tbc = 0;
+    let tong = 0;
+    for (let i = 0; i < x.length; i++) {
+        if (x[i] > max) {
+            max = x[i];
+        }
+        tong += x[i];
+        tbc = tong / (x.length)
+
+    }
+    alert("Số lớn nhất là " + max + " trung bình cộng của dãy số là " + tbc)
+
+
+</script>
+
+</body>
+</html>

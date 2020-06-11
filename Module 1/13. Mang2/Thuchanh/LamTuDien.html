@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>\
+<h1>Từ Điển Các Kiểu</h1>
+<form>
+    <input type="text" id="td1" oninput="click1()">
+    <input type="text" id="td2">
+<!--    <input type="button" value="Bắt đầu tra" id="td3" onclick="click1()">-->
+</form>
+<body>
+<script>
+    let tiengViet = ["tốt", "bậc thầy", "di động", "thành phố", "địa chỉ"];
+    let tiengAnh = ["good", "master", "mobile", "city", "address"];
+    let index = -1;
+    let kq = "";
+
+    function click1() {
+        let nhap = document.getElementById("td1").value;
+        for (let i = 0; i < tiengViet.length; i++) {
+            if (tiengViet[i] === nhap) {
+                index = i;
+                kq = (tiengAnh[index]);
+                break;
+            }
+            if (tiengAnh[i] === nhap) {
+                index = i;
+                kq = (tiengViet[index]);
+                break;
+            } else kq = "ko tim thay"
+        }
+        document.getElementById("td2").value =kq
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let customes;
+    let discount;
+    let people;
+    let rentdays;
+    let servicetype;
+    let kindofroom;
+    let check = true;
+
+
+    name = prompt('Nhập vào họ và tên');
+    cmnd = prompt('Nhập CMND');
+    birthday = prompt('Nhập Năm Sinh');
+    do {
+        let countAt = 0;
+        let coutDoc = 0;
+        email = prompt('Nhập Email');
+        for (let i = 0; i < email.length; i++) {
+            if (email.charAt(i) === "@") {
+                countAt++;
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(i) === ".") {
+                        coutDoc++;
+                    }
+                }
+            }
+        }
+        if (countAt != 1 || coutDoc < 1) {
+            alert("Email bạn nhập không đúng")
+        } else {
+            check = true;
+        }
+    } while (!check);
+    address = prompt('Nhập Địa chỉ');
+    customes = prompt('Loại Customer(Diamond, Platinum, Gold, Silver, member)');
+    discount = parseInt(prompt('Giảm giá'));
+    people = prompt('Số lượng đi kèm');
+    rentdays = parseInt(prompt('Số ngày thuê'));
+    servicetype = prompt('Loại dịch vụ(Villa, House, Room)');
+    kindofroom = prompt('Loại phòng thuê (Vip, Buisines, Normal)')
+</script>
+
+</body>
+</html>

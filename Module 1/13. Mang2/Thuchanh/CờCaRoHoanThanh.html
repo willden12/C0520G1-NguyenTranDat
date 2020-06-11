@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p id="carogame"/>
+<input type="button" value="Change Value" onclick="changeValue()">
+<body>
+<script>
+    let b = document.getElementById("carogame");
+
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 3; i++) {
+        board[i] = Array(".", ".", ".");
+    }
+    for (let i = 0; i < 3; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 3; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp";
+        }
+    }
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+    b.innerHTML = data;
+
+    function changeValue() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        if (board[positionX][positionY] = "x"){
+            board[positionX][positionY] === "o"
+        }
+        ;
+        ;
+        for (let i = 0; i < 3; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 3; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+        b.innerHTML = "<hr/>" + data;
+    }
+</script>
+
+</body>
+</html>

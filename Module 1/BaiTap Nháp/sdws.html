@@ -5,25 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    let tenDangNhap = prompt('nhập tên vào');
-    let r = prompt("nbbbbnnb")
-    let pasf = prompt("hfhfhhffh");
-    if (tenDangNhap == 'admin') {
-        alert('wecome')
-    } else if (tenDangNhap == null) {
-        alert('canceled')
-    } else {
-        alert('nhập lại')
-    }
 
-    if (pas = 'theMaster') {
-        alert('wecome')
-    } else if (pas == null) {
-        alert('canceled')
-    } else {
-        alert('I don’t know you')
+
+<script>
+    function func() {
+        let number = prompt("Input number:");
+        let sum=0;
+        for (let i=1; i<number; i++){
+            if(number%i==0){
+                sum +=i;
+            }
+        }
+        if(number == sum){
+            alert("true");
+        } else {
+            alert("false");
+        }
     }
+    func();
+
 </script>
 
 </body>

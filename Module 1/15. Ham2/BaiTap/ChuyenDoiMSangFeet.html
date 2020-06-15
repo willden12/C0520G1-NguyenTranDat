@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Met ==> feet <input type="text" oninput="nhapMet()" id="dd1" value="">
+    <input type="text" id="dd2" value=""><br>
+    Feet ==> Met<input type="text" oninput="nhapFeet()" id="dd3" value="">
+    <input type="text" id="dd4" value="">
+</form>
+<script>
+    function nhapMet() {
+        let layGiaTriMet = parseFloat(document.getElementById("dd1").value);
+        phepTinh1 = layGiaTriMet * 3.279;
+        parseFloat(document.getElementById("dd2").value = phepTinh1)
+    }
+
+    function nhapFeet() {
+        let layGiaTriFeet = parseFloat(document.getElementById("dd3").value);
+        phepTinh2 = layGiaTriFeet * 0.305;
+        parseFloat(document.getElementById("dd4").value = phepTinh2)
+    }
+
+
+</script>
+
+</body>
+</html>

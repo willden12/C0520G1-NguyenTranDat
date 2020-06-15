@@ -5,33 +5,24 @@
     <title>Title</title>
 </head>
 <body>
+<h2>Type anything slowly</h2>
+<textarea id="td1" onkeydown="click01()"></textarea>
 <script>
-    let year = parseInt(prompt('nhập số năm'))
-    let nhuan = false;
-
-    let nhuan4 = year % 4 == 0;
-    if (nhuan4) {
-        let nhuan100 = year % 100 == 0;
-        if (nhuan100) {
-            let nhuan400 = year % 400 == 0;
-            if (nhuan400) {
-                nhuan = true;
-            }
+    let nhapCau = "THẬT NGU NGỐC KHI KHÔNG BIẾT LÀM BÀI NÀY";
+    let bien = nhapCau.length;
+    let x = 0;
+    let y = "";
+    function click01() {
+        if (x >= bien) {
+            x=0;
+            y= "";
         } else {
-            nhuan = true;
+            y += nhapCau.charAt(x);
+            x++;
         }
+        document.getElementById('td1').value = y;
     }
-
-    if (nhuan) {
-        alert(year + " is a leap year");
-    } else {
-        alert(year + " is NOT a leap year");
-    }
-
 
 </script>
-
-
-
 </body>
 </html>

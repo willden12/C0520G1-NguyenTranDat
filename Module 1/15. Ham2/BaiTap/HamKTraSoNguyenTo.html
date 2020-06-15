@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Nhập số nguyên tố"));
+    if (ktrnumber(number)) {
+        alert("ok")
+    } else
+        alert("not ok");
+
+    function ktrnumber(number) {
+        if (number == 0 || number == 1) {
+            return false
+        }
+        for (i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false
+            }
+        }
+        return true;
+
+    }
+</script>
+
+</body>
+</html>

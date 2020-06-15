@@ -19,10 +19,63 @@
     let kindofroom;
     let check = true;
 
-
+    let tempName = "";
     name = prompt('Nhập vào họ và tên');
-    cmnd = prompt('Nhập CMND');
-    birthday = prompt('Nhập Năm Sinh');
+    name = name.trim().toLowerCase();
+    for (let i = 0; i < name.length; i++) {
+        if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || name.charAt(i - 1) === " ") {
+            tempName += name.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName += name.charAt(i)
+
+    }
+    name = tempName;
+
+
+    do {
+        cmnd = parseInt(prompt("Nhập cmnd"));
+        if (!isNaN(cmnd)) {
+            cmnd = Number.parseFloat(cmnd);
+        }
+        if (!Number.isInteger(cmnd)) {
+            alert("CMND không đúng định dạng ");
+            continue;
+        }
+        if (cmnd < 10000000 || cmnd > 99999999) {
+            alert("CMND không đúng định dạng");
+            continue
+        }
+
+    }
+    while (!check);
+    check = false;
+
+    do {
+        let coutxiet = 0;
+        birthday = prompt('Nhập Năm Sinh');
+        if (!isNaN(birthday)) {
+            birthday = Number.parseFloat(birthday)
+        }
+        if (!Number.isInteger(birthday)) {
+            alert("Không đúng định dạng");
+            continue;
+        }
+
+        for (let u = 0; u < birthday.length; i++) {
+            if (birthday.charAt(u) === "/") {
+                coutxiet++;
+            }
+        }
+        if (coutxiet < 2) {
+            alert("Ngày sinh cua bạn không đúng")
+        }
+
+    } while (!check);
+    a
     do {
         let countAt = 0;
         let coutDoc = 0;
@@ -31,7 +84,7 @@
             if (email.charAt(i) === "@") {
                 countAt++;
                 for (let j = i + 1; j < email.length; j++) {
-                    if (email.charAt(i) === ".") {
+                    if (email.charAt(j) === ".") {
                         coutDoc++;
                     }
                 }

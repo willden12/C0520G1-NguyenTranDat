@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="hcn" width="300px" height="150px" style="border: 1px rebeccapurple solid"></canvas>
+<script>
+    let Rectangle = function (wight1, height1) {
+        this.wight1 =wight1;
+        this.height1 =height1;
+        this.setWight = function (wight1) {
+            this.wight1=wight1;
+
+        };
+        this.getWight1 = function () {
+            return this.wight1;
+        };
+        this.getHeight1 = function () {
+            return this.height1;
+        };
+        this.getDientich = function () {
+            return this.wight1*this.height1;
+        };
+        this.getChuvi =function () {
+            return this.wight1*this.height1*2
+        }
+    };
+    let rectangle = new Rectangle(150,100);
+    let wight1 = rectangle.getWight1();
+    let height1 =rectangle.getHeight1();
+    let dientich =rectangle.getDientich();
+    let chuvi =rectangle.getChuvi();
+    document.write("Diện tích "+dientich+" chu vi "+chuvi);
+    rectangle.setWight(0);
+    document.write(rectangle.getDientich());
+    let canvas =document.getElementById("hcn");
+    let ctx = canvas.getContext("2d");
+    ctx.fillStyle ="#FF0";
+    ctx.fillRect(50,25,wight1,height1)
+
+</script>
+
+</body>
+</html>

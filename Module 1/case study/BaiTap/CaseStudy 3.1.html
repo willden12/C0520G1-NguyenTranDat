@@ -47,35 +47,36 @@
         }
         if (cmnd < 10000000 || cmnd > 99999999) {
             alert("CMND không đúng định dạng");
-            continue
+            continue;
         }
-
+        check=true;
     }
     while (!check);
     check = false;
-
     do {
-        let coutxiet = 0;
-        birthday = prompt('Nhập Năm Sinh');
-        if (!isNaN(birthday)) {
-            birthday = Number.parseFloat(birthday)
-        }
-        if (!Number.isInteger(birthday)) {
-            alert("Không đúng định dạng");
-            continue;
-        }
-
-        for (let u = 0; u < birthday.length; i++) {
-            if (birthday.charAt(u) === "/") {
-                coutxiet++;
+        birthday = prompt('Nhập ngày tháng năm sinh');
+        if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {
+            let day = birthday.substring(0, 2);
+            let month = birthday.substring(3, 5);
+            let year = birthday.substring(6, 10);
+            if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day = Number.parseFloat(day);
+                month = Number.parseFloat(month);
+                year = Number.parseFloat(year);
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day < 32 && month < 13 && year > 1950) {
+                        check = true;
+                    }
+                }
             }
         }
-        if (coutxiet < 2) {
-            alert("Ngày sinh cua bạn không đúng")
+        if (!check) {
+            alert("Ngày sinh không đúng định dạng")
         }
-
     } while (!check);
-    a
+    check = false;
+
+
     do {
         let countAt = 0;
         let coutDoc = 0;
@@ -100,7 +101,19 @@
     customes = prompt('Loại Customer(Diamond, Platinum, Gold, Silver, member)');
     discount = parseInt(prompt('Giảm giá'));
     people = prompt('Số lượng đi kèm');
-    rentdays = parseInt(prompt('Số ngày thuê'));
+    do {
+        rentdays = prompt('Số ngày thuê');
+        if (!isNaN(rentdays)) {
+            rentdays = Number.parseFloat(rentdays);
+            if (Number.isInteger(rentdays && rentdays > 0)) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert("Số ngày thuê không phải là số nguyên dương")
+        }
+    } while (!check);
+    check = false;
     servicetype = prompt('Loại dịch vụ(Villa, House, Room)');
     kindofroom = prompt('Loại phòng thuê (Vip, Buisines, Normal)')
 </script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = [2, 6, 5, 3, 45, 6, 4,];
+
+    function daoNguoc() {
+        let first = 0;
+        let last = x.length - 1;
+        while (first < last) {
+            let b = x[first];
+            x[first] = x[last];
+            x[last] = b;
+            first++;
+            last--;
+            return;
+        }
+    }alert(x);
+    daoNguoc()
+
+
+</script>
+
+</body>
+</html>

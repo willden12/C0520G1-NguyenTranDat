@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number12 = [34, 45, 523];
+    let min =soNhoNhat(number12);
+    function soNhoNhat(nho) {
+        let min =nho[0];
+        for (let i = 1; i < nho.length; i++) {
+            if (nho[i] < min) {
+                min = nho[i];
+            }
+        }return min
+    }
+    alert(min)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(doC) {
+            this.doC = doC;
+        }
+        getDoF() {
+            return 9 / 5 * this.doC + 32
+        };
+        getKevin() {
+            return this.doC + 273.15
+        };
+        setDoC(a) {
+            this.doC = a
+        }
+    }
+    let temperature = new Temperature(5);
+    let doF = temperature.getDoF();
+    let kenVin = temperature.getKevin();
+    alert("oC" + "=" + doF + "=" + kenVin);
+    temperature.setDoC(25);
+    alert( temperature.getDoF()+"+"+temperature.getKevin())
+</script>
+
+</body>
+</html>

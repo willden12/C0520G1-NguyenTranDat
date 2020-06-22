@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let checkValid = false;
+    let number;
+
+    do {
+        n = parseInt(prompt('Nhập số nguyên dương n lớn hơn 6:'));
+        if (Number.isInteger(n) && n > 6 ) {
+            checkValid = true;
+        } else {
+            alert('Nhập sai. Mời nhập lại.');
+        }
+    } while (!checkValid);
+    checkValid = false;
+
+    let arr = new Array(n);
+    for (let i = 0; i < n; i++) {
+        do {
+            number = parseInt(prompt('Nhập phần tử vào mảng: '));
+            if (Number.isInteger(number)) {
+                checkValid = true;
+            } else {
+                alert('Nhập sai. Mời nhập lại.')
+            }
+        } while (!checkValid);
+        checkValid =false;
+        arr[i] = number;
+    }
+    alert('Chưa sắp xếp: ' + arr);
+    arr.sort(function (a,b) {
+        return a - b;
+    })
+    alert('Sau sắp xếp: ' + arr);
+
+</script>
+
+</body>
+</html>

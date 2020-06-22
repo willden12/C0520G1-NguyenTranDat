@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let name;
+    let cmnd;
+    let phoneNumber;
+    let birthday;
+    let email;
+    let address;
+    let typeCustomes;
+    let discount;
+    let rentdays;
+    let typeService;
+    let typeRoom;
+    let quantinyIncluded;
+    let totalPay;
+
+
+
+    name = prompt('Nhập vào họ và tên');
+    cmnd = prompt('Nhập CMND');
+    phoneNumber = prompt(" Nhập sđt");
+    birthday = prompt('Nhập Năm Sinh');
+    email = prompt('Nhập Email');
+    address = prompt('Nhập Địa chỉ');
+    typeCustomes = prompt('Loại Customer(Diamond, Platinum, Gold, Silver, member)');
+    discount = parseInt(prompt('Giảm giá'));
+    quantinyIncluded = prompt('Số lượng đi kèm');
+    rentdays = parseInt(prompt('Số ngày thuê'));
+    typeService = prompt('Loại dịch vụ(Villa, House, Room)');
+    typeRoom = prompt('Loại phòng thuê (Vip, Buisines, Normal)');
+
+    if (typeService === 'Villa') {
+        totalPay = 500 * rentdays * (1 - discount / 100)
+    } else if (typeService === 'House') {
+        totalPay = 300 * rentdays * (1 - discount / 100)
+    } else if (typeService === 'Room') {
+        totalPay = 100 * rentdays * (1 - discount / 100)
+    } else {
+        alert('Nhập lại')
+    }
+
+    alert('Họ và tên :' + name +
+        '\n1.Cmnd : ' + cmnd +
+        '\n2.Ngày sinh : ' + birthday +
+        '\n3.Email : ' + email +
+        '\n4.Địa chỉ : ' + address +
+        '\n5.Loại Customes : ' + typeCustomes +
+        '\n6.Giảm giá : ' + discount +
+        '\n7.Số lượng đi kèm : ' + quantinyIncluded +
+        '\n8.Số ngày thuê : ' + rentdays +
+        '\n9.Loại dịch vụ : ' + typeService +
+        '\n10.Loại phòng thuê : ' + typeRoom +
+        '\n11.Tổng tiền phải trả là : ' + totalPay)
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><script>
+    function findCard() {
+        let arr1 = ["T","M","H","D"];
+        let arr2 = ["Toyota","Mercedes","Hyundai","Daewon"];
+        let check = prompt("input check:");
+        let index;
+        let count = false;
+        for (let i=0; i<arr1.length; i++){
+            if(check === arr1[i]){
+                index =i;
+                count = true;
+                break;
+            }
+        }
+        if(count){
+            alert(arr2[index]);
+        } else {
+            alert("fail");
+        }
+    }
+    findCard();
+</script>
+
+
+</body>
+</html>

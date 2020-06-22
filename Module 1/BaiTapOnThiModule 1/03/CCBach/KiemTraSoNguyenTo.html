@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Nhập số cần kiểm tra", ""));
+    let i = 2;
+    let check = true;
+    for (i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            check = false;
+        }
+    }
+    if (check) {
+        alert(number + " Là số nguyên tố ");
+    } else {
+        alert(number + " Không phải là số nguyên tố ");
+    }
+</script>
+
+</body>
+</html>

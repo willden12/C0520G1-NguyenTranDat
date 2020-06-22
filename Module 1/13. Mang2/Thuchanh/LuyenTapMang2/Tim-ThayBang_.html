@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhập 1 chuỗi: ");
+    for (let i = 0; i < a.length;i++){
+        if (a[i] === '-'){
+            a = a.replace('-','_');
+        }
+    }
+    alert(a);
+</script>
+
+</body>
+</html>

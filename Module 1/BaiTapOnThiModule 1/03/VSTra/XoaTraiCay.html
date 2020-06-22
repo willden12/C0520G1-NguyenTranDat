@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let fruit = ["Apple", "Banana", "Lemon"];
+
+    function removeFruit(fruit) {
+        let n = prompt("Nhập tên loại trái cây: ");
+        for (let i = 0; i < fruit.length; i++) {
+            if (n === fruit[i]) {
+                fruit.splice(i, 1);
+                alert(fruit);
+            }
+        }
+    }
+
+    removeFruit(fruit);
+</script>
+
+</body>
+</html>

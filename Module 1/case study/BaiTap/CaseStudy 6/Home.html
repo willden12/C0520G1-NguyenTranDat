@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="Employee.js"></script>
+
+<script>
+    let listEmployee = [];
+    let ktraName = /^\D+$/;
+    let ktraPhone = /^\d{10}$/;
+    let ktraCmnd = /^\d{9}$/;
+    let regexemail = /\S+@\S+\.\S+/;
+    let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+    function displayMainMenu() {
+        let choose = parseInt(prompt('1.Thêm nhân viên.' + '\n' +
+            '2.Hiển thị nhân viên' + '\n' +
+            '3.Hiện thị bảng lương nhân viên.' + '\n' +
+            '4.Xoá nhân viên.' + '\n' +
+            '5.Thoát.'));
+        switch (choose) {
+            case 1:{
+                // alert('Chọn 1 à, chắc chưa????');
+                addNewEmployee();
+                break;
+            }
+            case 2:{
+                // alert('bạn đã số 3: ');
+                displayInformation();
+                break;
+            }
+            case 3:{
+                // alert('Chọn số 2 thì tôi sẽ ...');
+                displaySalary();
+                break;
+            }
+            case 4:{
+                deleteEmployee();
+                break;
+            }
+            case 5:{
+                confirm('Bạn muốn thoát phải không?????');
+                exit();
+                break;
+            }
+            default:{
+                alert('Vui lòng chọn lại!');
+            }
+        }
+        // displayMainMenu();
+    }
+    function addNewEmployee() {
+        let employee = new Employee();
+        let checvalid = false;
+        do {
+            employee.setName(prompt("Nhập tên: "));
+            if (ktraName.test(employee.getName())){
+                checvalid=true;
+            }else {
+                alert('Tên thì bạn ko được nhập số nhé...');
+            }
+        }while (!checvalid);
+        checvalid=false;
+        do {
+            employee.setBirthday(prompt("Nhập ngày sinh "));
+            if (regexBirthday.test(employee.getBirthday())){
+                checvalid=true;
+            }else{
+                alert('Bạn nhập ngày sinh sai định dạng, hãy nhập dd/mm/yyyy.');
+            }
+        }while (!checvalid);
+        do {
+            employee.setEmail(prompt("Nhập email "));
+            if (regexemail.test(employee.getEmail())){
+                checvalid=true;
+            }else {
+                alert('Bạn nhập email sai định dạng rồi, vui lòng nhập lại nhé');
+            }
+        }while (!checvalid);
+        checvalid = false;
+        do {
+            employee.setCmnd(prompt("Nhập số CMND "));
+            if (ktraCmnd.test(employee.getCmnd())){
+                checvalid=true;
+            }else {
+                alert('Bạn nhập sai định dạng của CMND');
+            }
+        }while (!checvalid);
+        checvalid=false;
+        do {
+            employee.setPhone(prompt("Nhập SDT "));
+            if (ktraPhone.test(employee.getPhone())){
+                //Bỏ vào hàm setPhone() là sai vì nó ko gọi dc dữ liều vào mà phải là getPhone()
+                checvalid=true;
+            }else {
+                alert('Bạn nhập sđt chưa đúng định dạng');
+            }
+        } while (!checvalid);
+        checvalid=false;
+        employee.setLevel(prompt("Nhập trình độ của nhân viên "));
+        employee.setLocaltion(prompt("Nhập vị trí "));
+        listEmployee.push(employee);
+        alert("Bạn đã thêm thành công employee");
+        displayMainMenu();
+    }
+    function displaySalary() {
+        let result = "";
+        for(let i=0; i<listEmployee.length;i++){
+            result += i + ". Tên: " + listEmployee[i].getName() +"\n" ;
+        }
+        let chooseDisplay = parseInt(prompt("Chọn nhân viên cần hiển thị lương."
+            +"\n" + result));
+        alert("Lương của- "+listEmployee[chooseDisplay].getName() + " -là: " +
+            listEmployee[chooseDisplay].getSalary());
+        displayMainMenu();
+    }
+    function displayInformation() {
+        let result = "";
+        for(let i=0; i<listEmployee.length;i++){
+            result += i+ ". Tên: " + listEmployee[i].getName() +"\n" ;
+        }
+        let chooseDisplay = parseInt(prompt("Chọn nhân viên cần hiển thị thông tin:"
+            +"\n" + result));
+        alert("Tên: " + listEmployee[chooseDisplay].getName() +"\n"+
+            "Ngày Sinh: "+ listEmployee[chooseDisplay].getBirthday() + "\n"+
+            "Số điện thoại: "+ listEmployee[chooseDisplay].getPhone() + "\n"+
+            "Email: "+ listEmployee[chooseDisplay].getEmail() + "\n"+
+            "Số CMND: "+ listEmployee[chooseDisplay].getCmnd() + "\n"+
+            "Trình độ: "+ listEmployee[chooseDisplay].getLevel() + "\n"+
+            "Vị trí: "+ listEmployee[chooseDisplay].getLocaltion() );
+        // displayInformation();
+        // if (chooseDisplay>listEmployee.length){
+        //     alert(listEmployee);
+        // }
+        displayMainMenu();
+    }
+    function deleteEmployee() {
+        let result = "";
+        for(let i=0; i<listEmployee.length;i++){
+            result += i+ ". Tên: " + listEmployee[i].getName() +"\n" ;
+        }
+        let chooseDel = parseInt(prompt("Chọn nhân viên cần xoá:"
+            +"\n" + result));
+        let check = prompt("Bạn chắc chắn chứ?");
+        if (check){
+            listEmployee.splice(chooseDel-1,1)
+        } else deleteEmployee();
+        displayMainMenu();
+    }
+    function exit() {
+        alert('Xin chào và hẹn gặp lại.');
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>

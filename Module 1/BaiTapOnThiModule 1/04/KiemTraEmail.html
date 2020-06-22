@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    check = false;
+    do {
+        let email = prompt("nhap email: ");
+        let counti = 0;
+        let countj = 0;
+        for (let i = 1; i < email.length; i++) {
+            if (email.charAt(i) === "@") {
+                counti++;
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(j) === ".") {
+                        countj++;
+                    }
+                }
+            }
+            for (let i = 0; i < email.length; i++) {
+                if (email[i] = email.charAt()){}
+            }
+        }
+        if (counti != 1 || countj < 1) {
+            alert("email khong dung");
+        } else {
+            alert("bạn đã nhập đúng email");
+            check = true;
+        }
+    } while (!check);
+</script>
+
+</body>
+</html>

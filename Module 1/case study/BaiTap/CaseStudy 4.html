@@ -6,51 +6,50 @@
 </head>
 <body>
 <script>
-    let arrNameCustomes = [];
+    let arrNameCustomer = [];
     while (true) {
-        let choose = parseInt(prompt("1.add new Customers" + "\n" + "2.Delete Customer"));
+        let choose = parseInt(prompt("1. Thêm khách hàng. " + '\n' + "2. Xoá khách hàng. "));
         switch (choose) {
             case 1: {
-                let number = parseInt(prompt("Enter number customes you want add to arr: "));
-                for (let i = 0; i < number; i++) {
-                    let nameCustomer = prompt("Enter name of customer: ");
-                    arrNameCustomes.push(nameCustomer);
+                let num = parseInt(prompt('NHập số khách hàng cần thêm vào.'));
+                for (let i = 0; i < num; i++) {
+                    let nameCustomer = prompt('Nhập tên khách hàng: ');
+                    arrNameCustomer.push(nameCustomer);
                 }
-                let result = "";
-                arrNameCustomes.sort();
-                for (let i = 0; i < arrNameCustomes.length; i++) {
-                    result += (i + 1) + "." + arrNameCustomes[i] + "\n";
+                let tam = "";
+                arrNameCustomer.sort();
+                arrNameCustomer.reverse();// sắp xếp ngược lại từ z -> a
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    tam += (i + 1) + ". " + arrNameCustomer[i] + "\n";
                 }
-                alert(result);
+                alert(tam);
                 break;
             }
             case 2:{
-                let check =false;
-                let nameCustomer = prompt("Enter customer you want delete: ");
-                for (let i=0; i<arrNameCustomes.length;i++){
-                    if (arrNameCustomes[i]=== nameCustomer){
-                        arrNameCustomes.slice(i,1);
-                        check= true;
+                let check = false;
+                let nameCustomer = prompt("Nhập tên cần xoá");
+                for (let i =0;i<arrNameCustomer.length;i++){
+                    if (arrNameCustomer[i]===nameCustomer){
+                        arrNameCustomer.splice(i,1);
+                        check=true;
                     }
                 }
                 if (!check){
-                    alert("tên của bạn không có trong mảng.")
+                    alert("Tên khách hàng bạn muốn xoá không có trong mảng");
                 }
-                let result = "";
-                arrNameCustomes.sort();
-                for (let i = 0; i < arrNameCustomes.length; i++) {
-                    result += (i + 1) + "." + arrNameCustomes[i] + "\n";
+                let tam = "";
+                arrNameCustomer.sort();
+                arrNameCustomer.reverse();// sắp xếp ngược lại từ z -> a
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    tam += (i + 1) + ". " + arrNameCustomer[i] + "\n";
                 }
-                alert(result);
+                alert(tam);
                 break;
             }
-            default: {
-                alert("false")
-            }
+            default:
+                alert('Failed');
         }
     }
-
-
 </script>
 
 </body>

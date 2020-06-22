@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Customer.js"></script>
+
+</head>
+<body>
+<script>
+    let listCustomer = [];
+    let regexemail = /\S+@\S+\.\S+/;
+    let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+    let regexphone = /^\d+$/;
+    let ktraCmnd = /^\d{9}$/;
+
+    function dispalyMainMenu() {
+        let choose = parseInt(prompt('1.Thêm khách hàng.' + '\n' +
+            '2.Hiển thị thông tin khách hàng' + '\n' +
+            '3. Hiển thị tổng tiền cần thanh toán' + '\n' +
+            '4.Sửa thông tin khách hàng.' + '\n' +
+            '5.Xoá khách hàng.' + '\n' +
+            '6.Thoát.'));
+        switch (choose) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 3: {
+                displayTotalPays();
+            }
+            default: {
+                alert('false');
+                dispalyMainMenu();
+            }
+        }
+
+        function addNewCustomer() {
+            let checkValid = false;
+            let cus = new Customer();
+            let name = prompt("Nhập họ tên");
+            checkValid = false;
+            let cmnd;
+            do {
+                cmnd = prompt("Nhập số CMND");
+                if (ktraCmnd.test(cmnd)) {
+                    checkValid = true;
+                } else {
+                    alert("Cmnd của bạn chưa đúng định dạng")
+                }
+            } while (!checkValid);
+            checkValid = false;
+            let phoneNumber;
+            do {
+                phoneNumber = prompt("Số điện thoại của bạn:");
+                if (regexphone.test(phoneNumber)) {
+                    checkValid = true;
+                } else {
+                    alert('Sdt chưa đúng');
+                }
+            } while (!checkValid);
+            checkValid = false;
+            let birthday;
+            do {
+                birthday = prompt("Nhập Ngày sinh: ");
+                if (regexBirthday.test(birthday)) {
+                    checkValid = true;
+                } else {
+                    alert('Ngày sinh bạn nhập chưa đúng');
+                }
+            } while (!checkValid);
+            checkValid = false;
+            let email;
+            do {
+                email = prompt("Nhập email: ");
+                if (regexemail.test(email)) {
+                    checkValid = true;
+                } else {
+                    alert('Email bạn nhập không hợp lệ');
+                }
+            } while (!checkValid);
+            checkValid = false;
+            let address = prompt("Nhập địa chỉ: ");
+            let typeCustomer = prompt('Loại khách hàng');
+            let discount = prompt("Được giảm giá: ");
+            let rentDays = prompt("Số ngày thuê: ");
+            let typerService = prompt("Loại dịch vụ: ");
+            let quantityIncluded = prompt("Nhập số lượng đi kèm: ");
+            let typeRoom = prompt("Loại phòng: ");
+            cus.setName(name);
+            cus.setCmnd(cmnd);
+            cus.setPhoneNumber(phoneNumber);
+            cus.setBirthday(birthday);
+            cus.setEmail(email);
+            cus.setAddress(address);
+            cus.setTypeCustomer(typeCustomer);
+            cus.setDiscount(discount);
+            cus.setRentdays(rentDays);
+            cus.setTyperService(typerService);
+            cus.setTypeRoom(typeRoom);
+            cus.setQuantityIncluded(quantityIncluded);
+            listCustomer.push(cus);
+            alert('Thêm thông tin khách hàng thành công.');
+            dispalyMainMenu();
+        }
+
+        function displayTotalPays() {
+            let tam = "";
+            for (let i = 0; i < listCustomer.length; i++) {
+                tam += i + '. Tên :' + listCustomer[i].getName() + '\n';
+            }
+            let chooseDisplay = parseInt(prompt(tam));
+            alert('Tổng tiền của bạn :' + listCustomer[chooseDisplay].totalPays());
+        }
+    }
+
+    dispalyMainMenu();
+</script>
+
+</body>
+</html>

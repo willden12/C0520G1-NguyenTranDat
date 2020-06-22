@@ -5,24 +5,33 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Type anything slowly</h2>
-<textarea id="td1" onkeydown="click01()"></textarea>
 <script>
-    let nhapCau = "THẬT NGU NGỐC KHI KHÔNG BIẾT LÀM BÀI NÀY";
-    let bien = nhapCau.length;
-    let x = 0;
-    let y = "";
-    function click01() {
-        if (x >= bien) {
-            x=0;
-            y= "";
-        } else {
-            y += nhapCau.charAt(x);
-            x++;
-        }
-        document.getElementById('td1').value = y;
-    }
+   maxMinAvg()
 
+    function maxMinAvg(arr) {
+        let arrnew = [];
+        let max = arr[0];
+        let min = [0];
+        let tbc = 0;
+        let tong = 0;
+        for (let i = 0; i < arr.length; i++) {
+
+
+            if (arr[i] > max) {
+                max = arr[i];
+                arrnew.push(max)
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+                arrnew.push(min)
+            }
+            tong += arr[i];
+            tbc = tong / arr.length;
+            arrnew.push(tbc);
+
+        }
+        return arrnew;
+    }
 </script>
 </body>
 </html>

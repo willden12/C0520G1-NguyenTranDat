@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number;
+    let checkValid = false;
+    let regexNumber = /^[\d]{4,4}$/;
+
+    function isNumber(x) {
+        if (regexNumber.test(x)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    do {
+        number= parseInt(prompt('Nhập một số có 4 chữ số:'));
+        if (isNumber(number)) {
+            checkValid = true;
+        } else {
+            alert('Nhập sai. Mời nhập lại.')
+        }
+    } while (!checkValid);
+    checkValid =false;
+
+    let arr = [];
+    let numberStr = number.toString();
+
+    for (let i = 0; i < numberStr.length; i++) {
+        arr[i] = parseInt(numberStr.substring(i,i+1));
+    }
+
+    let addition = arr[0]+arr[1];
+    let subtraction = arr[numberStr.length-2]-arr[numberStr.length-1];
+
+    if (addition === subtraction) {
+        alert('True');
+    } else {
+        alert('False');
+    }
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

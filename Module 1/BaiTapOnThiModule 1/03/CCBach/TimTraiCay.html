@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let fruit = ["Apple","Banana","Lemon"];
+    let result = prompt("Nhập loại trái cây cần xóa");
+    function removeFruit(array,result) {
+        let check = false;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === result) {
+                array.splice(i,1);
+                check = true;
+            }
+        }
+        if(!check) {
+            alert("Tên trái cây bạn cần xóa không có trong danh sách");
+        }
+        let result2 = "";
+        for (let i = 0; i < array.length; i++) {
+            result2 += (i+1) + " . " + array[i] + "\n";
+        }
+        return result2;
+    }
+    let result2 = removeFruit(fruit,result);
+    alert(result2);
+</script>
+
+</body>
+</html>

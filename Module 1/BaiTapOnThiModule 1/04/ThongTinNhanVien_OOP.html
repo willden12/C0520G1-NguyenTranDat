@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>tài khoản</label>
+<input type="text" id="taikhoan">
+<label>mật khẩu</label>
+<input type="password" id="matkhau">
+<button type="submit" onclick="myFuntion()">đăng nhập</button>
+<script>
+    class Employee {
+        constructor(acc, name, passw, birthday, cmnd,sex, add, phone) {
+            this.acc = acc;
+            this.name = name;
+            this.passw = passw;
+            this.birthday = birthday;
+            this.cmnd = cmnd;
+            this.sex = sex;
+            this.add = add;
+            this.phone = phone;
+        }
+        // alert(nhanvien.acc);
+        // alert(nhanvien.name);
+        // alert(nhanvien.passw);
+        // alert(nhanvien.birthday);
+        // alert(nhanvien.cmnd);
+        // alert(nhanvien.sex);
+        // alert(nhanvien.add);
+        // alert(nhanvien.phone);
+
+        setDangnhap(dangnhap) {
+            this.dangnhap = dangnhap;
+        }
+
+        getDangnhap() {
+            return this.dangnhap;
+        }
+
+        setTenNv(tenNv) {
+            this.tenNv = tenNv;
+        }
+
+        get enNv() {
+            return this.tenNv;
+        }
+
+        setNgaySinh(ngaySinh) {
+            this.ngaySinh = ngaySinh;
+        }
+
+        getNgaySinh() {
+            return this.ngaySinh;
+        }
+
+        setMatKhau(matKhau) {
+            this.matKhau = matKhau;
+        }
+
+        getMatKhau() {
+            return this.matKhau;
+        }
+
+        setCMND(CMND) {
+            this.CMND = CMND;
+        }
+
+        getCMND() {
+            return this.CMND;
+        }
+
+        setgioiTinh(gioiTinh) {
+            this.gioiTinh = gioiTinh;
+        }
+
+        getgioiTinh() {
+            return this.gioiTinh;
+        }
+
+        setdiaChi(diaChi) {
+            this.diaChi = diaChi;
+        }
+
+        getdiaChi() {
+            return this.diaChi;
+        }
+
+        setsoDt(soDt) {
+            this.soDt = soDt;
+        }
+
+        getsoDt() {
+            return this.soDt;
+        }
+    }
+    // let employee= new Employee();
+    // function myFuntion(){
+    //     alert("bạn vừa đăng nhập thành công");
+    //
+    //     employee.TenNv=prompt("nhập tên nhân viên");
+    //     check = false;
+    //
+    //     do {
+    //          employee.NgaySinh = prompt("birthday: ");
+    //         employee.CMND = prompt("cmnd: ");
+    //         employee.diaChi = prompt("địa chỉ: ");
+    //         if (employee.ngaySinh.charAt(2) === "/" && employee.ngaySinh.charAt(5) === "/") {
+    //             let day = employee.ngaySinh.substring(0, 2);
+    //             let month = employee.ngaySinh.substring(3, 5);
+    //             let year = employee.ngaySinh.substring(6, 10);
+    //             if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+    //                 day = Number.parseFloat(day);
+    //                 month = Number.parseFloat(month);
+    //                 yaer = Number.parseFloat(year);
+    //                 if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+    //                     if (day < 32 && month < 13) {
+    //                         check = true;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         if (!check) {
+    //             alert("bạn nhập sai định dạng birday");
+    //         }
+    //     } while (!check);
+    //     alert("tên: "+employee.tenNv+"\n"+ "ngày sinh: "+employee.ngaySinh+"\n"+"cmnd: "+employee.CMND+"\n"+"đại chỉ "+employee.diaChi)
+    // }
+    function myFuntion(){
+        nhanvien = new Employee("hoat", "levanhoat", "5678", "1/6/1994","123456789", "Nam", "15 đặng đình vân", "0935000000");
+        alert(nhanvien.acc);
+        alert(nhanvien.name);
+        alert(nhanvien.passw);
+        alert(nhanvien.birthday);
+        alert(nhanvien.cmnd);
+        alert(nhanvien.sex);
+        alert(nhanvien.add);
+        alert(nhanvien.phone);
+    }
+    let taikhoan = document.getElementById("taikhoan").value;
+    let matkhau = document.getElementById("matkhau").value;
+    if (taikhoan == "hoat" && matkhau == "123"){
+        alert("bạn đăng nhập thành công");
+        myFuntion();
+    }
+</script>
+
+</body>
+</html>

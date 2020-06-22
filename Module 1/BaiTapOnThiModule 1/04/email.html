@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let regexEmail = /^\w+@\w+\.\w+(\.\w+)*$/;           * có nghĩa là 0 hoặc nhiều lần          abc@gmail.com.vn.abc.abc.abc
+    // let regexEmail = /^\w+@\w+\.\w+(\.\w+)?$/;           ? có nghĩa là 0 hoặc 1 lần              abc@gmail.com.vn
+    let regexEmail = /^\w+@\w+\.\w+$/;                      /*w có nghĩa là chữ cái hoặc số         abc@gmail.com*/
+    let checkValid = false;
+    let email;
+    do {
+        email = prompt('Input email:');
+        if (regexEmail.test(email)) {
+            checkValid = true;
+        } else {
+            alert('Invalid email. Please try again.');
+        }
+    } while (!checkValid);
+    checkValid =false;
+    alert('Hello ' + email);
+</script>
+
+</body>
+</html>

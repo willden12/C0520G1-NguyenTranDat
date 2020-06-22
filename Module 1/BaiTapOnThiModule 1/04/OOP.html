@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Employee = function () {
+        this.setName = function (name) {
+            this.name = name;
+        }
+        this.getName = function () {
+            return this.name;
+        }
+        this.setCMND = function (cmnd) {
+            this.cmnd = cmnd;
+        }
+        this.getCMND = function () {
+            return this.cmnd;
+        }
+        this.setBirthday = function (birthday) {
+            this.birthday = birthday;
+        }
+        this.getBirthday = function () {
+            return this.birthday;
+        }
+        this.setEmail = function (email) {
+            this.email = email;
+        }
+        this.getEmail = function () {
+            return this.email;
+        }
+        this.setPhone = function (phone) {
+            this.phone = phone;
+        }
+        this.getPhone = function () {
+            return this.phone;
+        }
+        this.setUsername = function (username) {
+            this.username = username;
+        }
+        this.getUsername = function () {
+            return this.username;
+        }
+        this.setPassword = function (password) {
+            this.password = password;
+        }
+        this.getPassword = function () {
+            return this.password;
+        }
+        this.setSex = function (sex) {
+            this.sex = sex;
+        }
+        this.getSex = function () {
+            return this.sex;
+        }
+    };
+
+    let listEmployee = [];
+    let checkValid =false;
+    let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+    let regexEmail = /^\w+@\w+\.\w+$/;
+    let checkLogin = false;
+
+    function displayMainMenu() {
+        let choose = parseInt(prompt('Menu' +
+            '\n1. Register New Employee.' +
+            '\n2. Display Employee Information.' +
+            '\n3. Login.' +
+            '\n4. Exit.'));
+        switch (choose) {
+            case 1:
+                addNewEmployee();
+                break;
+            case 2:
+                displayInformationEmployee();
+                break;
+            case 3:
+                login();
+                break;
+            case 4:
+                alert('Exit.');
+                displayMainMenu();
+                break;
+            default:
+                alert('Failed. Please try again.');
+                displayMainMenu();
+        }
+    }
+
+    function login() {
+        let inputUsername = prompt('Username:');
+        let inputPassword = prompt('Password:');
+        checkLogin =false;
+        checkLogin = checkUsernamePassword(inputUsername,inputPassword);
+        if (checkLogin) {
+            alert('Login successfully.');
+        } else {
+            alert('Wrong username or password. Please try again.');
+        }
+        displayMainMenu();
+    }
+
+    function checkUsernamePassword(username,password) {
+        checkValid = false;
+        for (let i = 0; i < listEmployee.length; i++) {
+            if (username === listEmployee[i].getUsername() && password === listEmployee[i].getPassword()) {
+                checkValid = true;
+                break;
+            }
+        }
+        if (checkValid) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function displayInformationEmployee() {
+        let temp = '';
+        for (let i = 0; i < listEmployee.length; i++) {
+            temp += i + '. ' + listEmployee[i].getName() +'\n';
+        }
+        let chooseDiplay = parseInt(prompt('Choose employee you want to display information (0-' + (listEmployee.length - 1) + '):' +'\n' + temp));
+
+        alert('Name: ' + listEmployee[chooseDiplay].getName() +
+            '\n' + 'Identity Number: ' + listEmployee[chooseDiplay].getCMND() +
+            '\n' + 'Birthday: ' + listEmployee[chooseDiplay].getBirthday() +
+            '\n' + 'Email: ' + listEmployee[chooseDiplay].getEmail() +
+            '\n' + 'Phone: ' + listEmployee[chooseDiplay].getPhone() +
+            '\n' + 'Sex: ' + listEmployee[chooseDiplay].getSex()
+        );
+        displayMainMenu();
+    }
+
+    function addNewEmployee() {
+        let employee = new Employee();
+        employee.setName(prompt('Enter name:'));
+        employee.setCMND(prompt('Enter identity number:'));
+
+        let birthday;
+        checkValid = false;
+        do {
+            birthday = prompt('Input birthday (mm/dd/yyyy): ');
+            if (regexBirthday.test(birthday)) {
+                checkValid = true;
+            } else {
+                alert('Invalid Date. Please try again.');
+            }
+        } while (!checkValid)
+        employee.setBirthday(birthday);
+
+        let email;
+        checkValid = false;
+        do {
+            email = prompt('Input email:');
+            if (regexEmail.test(email)) {
+                checkValid = true;
+            } else {
+                alert('Invalid email. Please try again.');
+            }
+        } while (!checkValid);
+        employee.setEmail(email);
+
+        employee.setPhone(prompt('Enter phone:'));
+        employee.setSex(prompt('Enter sex:'));
+        employee.setUsername(prompt('Enter username:'));
+        employee.setPassword(prompt('Enter password:'));
+        listEmployee.push(employee);
+        alert('Added successfully.');
+        displayMainMenu();
+    }
+
+    displayMainMenu();
+
+
+
+</script>
+
+</body>
+</html>

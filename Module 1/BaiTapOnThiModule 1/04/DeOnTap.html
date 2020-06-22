@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><h3 id="result"></h3>
+<!--<script>-->
+<!--    let num = prompt("Nhap vao so nguyen")*1;-->
+<!--    let array = new Array();-->
+<!--    let str = "";-->
+<!--    let result = document.getElementById("result");-->
+<!--    for (let i=0;i<num;i++) {-->
+<!--        array[i] = Math.round(Math.random()*20);-->
+<!--    }-->
+<!--    str = array.join(",");-->
+<!--    str += "<br>" + "Mảng đảo ngược là :<br>";-->
+<!--    array.reverse();-->
+<!--    str += array.join(",");-->
+<!--    result.innerHTML = str;-->
+<!--</script>-->
+
+
+
+<!--<script>-->
+<!--    // tính trung bình cộng các số chia hết cho 3 trong mảng-->
+<!--    let str=prompt('nhập vào 1 dãy số');-->
+<!--    let arr=str.split(',');-->
+<!--    let count=0;-->
+<!--    let sum=0;-->
+<!--    for (let i=0;i<arr.length;i++){-->
+<!--        if (arr[i]%3==0){-->
+<!--            count++;-->
+<!--            sum+=arr[i]*1;-->
+<!--        }-->
+<!--    }-->
+<!--    let tbc=sum/count;-->
+<!--    console.log(tbc);-->
+<!--</script>-->
+
+
+
+
+<!--<script>-->
+<!--    // kiểm tra số hoàn hảo-->
+<!--    let num=prompt('nhập vào 1 số nguyên');-->
+<!--    let sum =0;-->
+<!--    for (let i=1;i<num;i++){-->
+<!--        if (num%i==0){-->
+<!--            sum+=i;-->
+<!--        }-->
+<!--    }-->
+<!--    if (sum==num){-->
+<!--        alert(num+' là số hoàn hảo');-->
+<!--    }else {-->
+<!--        alert(num+' k phải là số hoàn hảo');-->
+<!--    }-->
+<!--</script>-->
+
+
+
+
+<!--<script>-->
+<!--    let day=prompt('nhập ngày')*1;-->
+<!--    let month=prompt('nhập tháng')*1;-->
+<!--    let year=prompt('nhập năm')*1;-->
+<!--    let arr=[day,month,year];-->
+<!--    function getmonth(month){-->
+<!--        switch (month) {-->
+<!--            case 1:-->
+<!--            case 3:-->
+<!--            case 5:-->
+<!--            case 7:-->
+<!--            case 8:-->
+<!--            case 10:-->
+<!--            case 12:-->
+<!--                return 31;-->
+<!--            case 4:-->
+<!--            case 6:-->
+<!--            case 9:-->
+<!--            case 11:-->
+<!--                return 30;-->
+<!--            case 2:-->
+<!--                if(year%4==0){-->
+<!--                    if(year%100!=0)-->
+<!--                        return 29;-->
+<!--                    else {-->
+<!--                        if(year%400!=0)-->
+<!--                            return 28;-->
+<!--                        else {-->
+<!--                            return 29;-->
+<!--                        }-->
+<!--                    }-->
+<!--                }-->
+<!--                else {-->
+
+
+<!--                    return 28;-->
+<!--                }-->
+
+<!--    }-->
+
+<!--    }-->
+<!--    let sum=0;-->
+<!--    for (i=1;i<month;i++){-->
+<!--       sum+=getmonth(i);-->
+<!--    }-->
+<!--    let total= sum+day;-->
+<!--    alert(total);-->
+<!--    alert(arr=arr.join('/'));-->
+
+<!--</script>-->
+
+<!--<table border="1" id="table">-->
+<!--    <tr>-->
+<!--        <th>STT</th>-->
+<!--        <th>Họ và tên</th>-->
+<!--        <th>Ngày sinh</th>-->
+<!--        <th>Địa chỉ</th>-->
+<!--        <th>Lương</th>-->
+<!--        <th>Chức vụ</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th>1</th>-->
+<!--        <th>Trương Tấn A</th>-->
+<!--        <th>11-11-1997</th>-->
+<!--        <th>quảng nam</th>-->
+<!--        <th>2000</th>-->
+<!--        <th>Abc</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th>2</th>-->
+<!--        <th>Trương Tấn B</th>-->
+<!--        <th>11-11-1998</th>-->
+<!--        <th>đà nẵng</th>-->
+<!--        <th>2000</th>-->
+<!--        <th>Abc</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th>2</th>-->
+<!--        <th>Trương Tấn c</th>-->
+<!--        <th>11-11-1999</th>-->
+<!--        <th>huế</th>-->
+<!--        <th>2000</th>-->
+<!--        <th>Abc</th>-->
+<!--    </tr>-->
+<!--</table>-->
+<!--<button type="button" id="button" >thêm nhân sự</button>-->
+<!--<script>-->
+<!--    let tab=document.getElementById('table');-->
+<!--    class Employee{-->
+<!--        constructor(STT,name,birth,address,salary,position) {-->
+<!--            this.STT=STT;-->
+<!--            this.name=name;-->
+<!--            this.birth=birth;-->
+<!--            this.address=address;-->
+<!--            this.salary=salary;-->
+<!--            this.position=position;-->
+<!--        }-->
+<!--    }-->
+<!--    let employee1= new Employee(1,'Trương Tấn A','11-11-1997','quảng nam',2000,'abc');-->
+<!--    let employee2= new Employee(2,'Trương Tấn B','11-11-1998','đà nẵng',2000,'abc');-->
+<!--    let employee3= new Employee(3,'Trương Tấn C','11-11-1999','huế',2000,'abc');-->
+<!--    let arrEmployee=[employee1,employee2,employee3];-->
+<!--    let data='<tr><th>STT</th><th>Họ và tên</th><th>Ngày sinh</th><th>Địa chỉ</th><th>Lương</th><th>Chức vụ</th></tr>';-->
+<!--   function showEmployee(){-->
+<!--        for (let i=0;i<arrEmployee.length;i++){-->
+<!--            data+='<tr>';-->
+<!--            data+=' <th>'+arrEmployee[i].STT+'</th>';-->
+<!--            data+=' <th>'+arrEmployee[i].name+'</th>';-->
+<!--            data+=' <th>'+arrEmployee[i].birth+'</th>';-->
+<!--            data+=' <th>'+arrEmployee[i].address+'</th>';-->
+<!--            data+=' <th>'+arrEmployee[i].salary+'</th>';-->
+<!--            data+=' <th>'+arrEmployee[i].position+'</th>';-->
+<!--            data+='</tr>';-->
+<!--        }-->
+<!--       tab.innerHTML= data;-->
+<!--    }-->
+<!--    showEmployee();-->
+<!--   function addEmployee(){-->
+<!--       let stt=prompt('nhập stt');-->
+<!--       let name1=prompt('nhập tên');-->
+<!--       let bỉthday=prompt('ngày sinh');-->
+<!--       let add=prompt('địa chỉ');-->
+<!--       let sala=prompt('lương');-->
+<!--       let posi=prompt('chức vụ');-->
+<!--       let employee4=new Employee(stt,name1,bỉthday,add,sala,posi);-->
+<!--       arrEmployee.push(employee4);-->
+<!--       data+=' <th>'+employee4.STT+'</th>';-->
+<!--       data+=' <th>'+employee4.name+'</th>';-->
+<!--       data+=' <th>'+employee4.birth+'</th>';-->
+<!--       data+=' <th>'+employee4.address+'</th>';-->
+<!--       data+=' <th>'+employee4.salary+'</th>';-->
+<!--       data+=' <th>'+employee4.position+'</th>';-->
+<!--   }-->
+<!--   let result= document.getElementById('button');-->
+<!--   result.onclick= function(){-->
+<!--       addEmployee();-->
+<!--       data="";-->
+<!--        showEmployee();-->
+<!--   }-->
+
+
+
+
+
+
+<!--    //console.log(arrEmployee);-->
+
+
+
+
+<!--    // tab.innerHTML=data;-->
+
+<!--    tab.innerHTML=data;-->
+<!--// </script>-->
+
+
+
+
+<!--<script>-->
+<!--    // VIẾT CHƯƠNG TRÌNH IN RA CÁC DẤU '*'VỚI n LÀ CHIỀU CAO CỦA THÁP,CẦN IN RA n DÒNG-->
+
+<!--    let n=prompt('nhập số');-->
+<!--    for (let i=0;i<n;i++){-->
+<!--        for (let j=0;j<n;j++){-->
+<!--            document.write('*');-->
+<!--        }-->
+<!--        document.write('</br>');-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--    // VIẾT CHƯƠNG TRÌNH TÍNH S=1+1/2+1/3+...+1/n-->
+
+<!--    let n=prompt();-->
+<!--  let s=1;-->
+<!--  for (let i=2;i<=n;i++){-->
+<!--      s+=1/i;-->
+<!--  }-->
+<!--  alert(s);-->
+
+<!--</script>-->
+
+
+
+
+<!--<script>-->
+<!--// 4.	Viết chương trình tính :-->
+<!--// S=15-1+1/2-1/3!+....+(-1)n  1/n!-->
+
+<!--    let n=parseInt(prompt());-->
+<!--    let s=15;-->
+<!--    function giathua(number1) {-->
+<!--        let sum=1;-->
+<!--        for (let i=1;i<=number1;i++){-->
+<!--            sum*=i;-->
+<!--        }-->
+<!--        return sum;-->
+<!--    }-->
+<!--    for (let i=1;i<=n;i++){-->
+<!--        s+=Math.pow(-1,i)/giathua(i);-->
+<!--    }-->
+<!--    alert(s);-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--    // 5.	Viết chương trình tính  :-->
+<!--    //     S=1+1/3!+1/5!+…..+1/(2n-1)!-->
+
+<!--        let num=parseInt(prompt());-->
+<!--    function giaithua(x) {-->
+<!--        let sum=1;-->
+<!--        for (let i=1;i<=x;i++){-->
+<!--            sum*=i;-->
+<!--        }-->
+<!--        return sum;-->
+<!--    }-->
+<!--    let total = 0;-->
+<!--    for(let i=1;i<=num;i++) {-->
+<!--        total += 1 / giaithua(2*i-1);-->
+<!--    }-->
+<!--    alert(total);-->
+<!--</script>-->
+
+
+
+
+<!--<script>-->
+<!--    // Tính tổng và tích các chữ số của một số nguyên dương m cho trước-->
+<!--    // (Ví dụ : m=234=> S=2+3+4=9, P=2*3*4=24)-->
+
+<!--    let str = prompt("nhập vào chuỗi số cần tính tổng và tích");-->
+<!--    arr = str.split("");-->
+<!--    alert(arr);-->
+<!--    let tong = 0;-->
+<!--    let tich = 1;-->
+<!--    for(let i=0;i<arr.length;i++){-->
+<!--        tong += parseInt(arr[i]);-->
+<!--        tich *= parseInt(arr[i]);-->
+<!--    }-->
+<!--    document.write("Tổng là: " + tong + "; Tích là: " + tich);-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--    Nhập 2 số nguyên dương a và b.-->
+<!--        Sau đó in ra ước chung lớn nhất và bội chung nhỏ nhất của 2 số nguyên dương a và b đó.-->
+<!--        -->
+<!--    let a = parseInt(prompt("input số nhỏ hơn: a "));-->
+<!--    let b = parseInt(prompt("input số lớn hơn: b"));-->
+<!--    let arr =[];-->
+<!--    for(let i=1; i<=a; i++){-->
+<!--        if(a%i==0 && b%i==0){-->
+<!--            arr.push(i);-->
+<!--        }-->
+<!--    }-->
+<!--    let uocChungLonNhat = arr[arr.length-1];-->
+<!--    let boiChungNhoNhat = (a*b)/uocChungLonNhat;-->
+
+<!--    alert("Ước chung lớn nhất của: " +a+ " và " + b +" là: " + uocChungLonNhat +"\n" +-->
+<!--        "Bội chung lớn nhất của: " +a+ " và " + b +" là: " + boiChungNhoNhat);-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--9.	Nhập vào một chuỗi ký tự  thực hiện công việc sau:-->
+<!--a.	In ra chuỗi đảo ngược của chuỗi đã cho-->
+<!--b.	Đổi chuổi đã cho sang chữ hoa-->
+<!--c.	Đổi chuỗi đã cho sang chữ thường-->
+<!--d.	Đổi chuỗi đã cho sang vừa chữ hoa vừa chữ thường (các ký tự chữ hoa thì thành chữ thường và ngược lại)-->
+
+<!--    let str=prompt('nhập 1 chuỗi kí tự');-->
+<!--    let arr=str.split('');-->
+<!--   arr.reverse();-->
+<!--   let b=arr.toString();-->
+<!--    let c=b.replace(/,/g,'');-->
+<!--   alert(c);-->
+<!--    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';-->
+<!--    let LOWER = 'abcdefghijklmnopqrstuvwxyz';-->
+<!--    let result = [];-->
+
+<!--    for(let x=0; x<str.length; x++)-->
+<!--    {-->
+<!--        if(UPPER.indexOf(str[x]) !== -1)-->
+<!--        {-->
+<!--            result.push(str[x].toLowerCase());-->
+<!--        }-->
+<!--        else if(LOWER.indexOf(str[x]) !== -1)-->
+<!--        {-->
+<!--            result.push(str[x].toUpperCase());-->
+<!--        }-->
+<!--        else-->
+<!--        {-->
+<!--            result.push(str[x]);-->
+<!--        }-->
+<!--    }-->
+<!--    alert(result.join(''));-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--    let str=prompt('nhập chuỗi kí tự');-->
+<!--    str=str.replace(/\s+/g, " ");-->
+<!--    let arr=str.split(' ');-->
+<!--    for (let i=0;i<arr.length;i++){-->
+<!--        document.write(arr[i]);-->
+<!--        document.write('<br>');-->
+<!--    }-->
+<!--    alert(arr.length);-->
+<!--    let count=0-->
+<!--    for (let i=0;i<arr.length;i++){-->
+<!--        if (str==arr[i]){-->
+<!--                count++-->
+<!--                console.log(count);-->
+<!--            }-->
+
+
+<!--    }-->
+
+<!--// </script>-->
+
+
+
+
+<!--<div id="demo"></div>-->
+<!--<script>-->
+<!--    function kiemtra(arr) {-->
+<!--        let count;-->
+<!--        let kq = [];-->
+<!--        for (let i = 0; i < arr.length; i++) {-->
+<!--            if (arr[i] !== '') {-->
+<!--                count = 0;-->
+<!--                for (let j = i; j < arr.length; j++) {-->
+<!--                    if (arr[i] === arr[j]) {-->
+<!--                        count++;-->
+<!--                    }-->
+<!--                }-->
+<!--                kq.push(arr[i] + ' ' + count);-->
+<!--                for (let j = i+1; j < arr.length; j++) {-->
+<!--                    if (arr[i] === arr[j]) {-->
+<!--                        arr[j] = '';-->
+<!--                    }-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--        return kq;-->
+<!--    }-->
+<!--    function show(str) {-->
+<!--        let result = document.getElementById('demo');-->
+<!--        let arr = str.split(' ');-->
+<!--        let kq = '';-->
+<!--        for (let i=0;i<arr.length;i++) {-->
+<!--            kq += arr[i] + '<br>';-->
+<!--        }-->
+<!--        kq += 'So tu co trong chuoi :' + arr.length + '<br>';-->
+<!--        kq += kiemtra(arr);-->
+<!--        result.innerHTML = kq;-->
+<!--    }-->
+<!--    function Main() {-->
+<!--        let str = prompt('Nhap vao chuoi');-->
+<!--        show(str);-->
+<!--    }-->
+<!--    Main();-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--    class PhanSo{-->
+<!--        constructor(tuSo,mauSo) {-->
+<!--            this.tuSo=tuSo;-->
+<!--            this.mauSo=mauSo;-->
+<!--        }-->
+<!--        setTuSO(tuSo){-->
+<!--            this.tuSo=tuSo;-->
+<!--        }-->
+<!--        setMauSo(mauSo){-->
+<!--            this.mauSo=mauSo;-->
+<!--        }-->
+<!--        getTuSo(){-->
+<!--            return this.tuSo;-->
+<!--        }-->
+<!--        getMauSo(){-->
+<!--            return this.mauSo;-->
+<!--        }-->
+<!--        PhanSo(){-->
+<!--          let PhanSo=this.tuSo/this.mauSo;-->
+<!--          return PhanSo;-->
+<!--        }-->
+<!--        Cong(phansokhac){-->
+<!--            let cong=this.PhanSo()+phansokhac.PhanSo();-->
+<!--            return cong;-->
+<!--        }-->
+<!--        Tru(phansokhac){-->
+<!--            let tru=this.PhanSo()-phansokhac.PhanSo();-->
+<!--            return tru;-->
+<!--        }-->
+<!--        Nhan(phansokhac){-->
+<!--            let nhan=this.PhanSo()*phansokhac.PhanSo();-->
+<!--            return nhan;-->
+<!--        }-->
+<!--        Chia(phansokhac){-->
+<!--            let chia=this.PhanSo()/phansokhac.PhanSo();-->
+<!--            return chia;-->
+<!--        }-->
+<!--    }-->
+<!--    let phanSo1=new PhanSo(parseInt(prompt('nhập tử số 1')),parseInt(prompt('nhập mẫu số 1')));-->
+<!--    let phanSo2=new PhanSo(parseInt(prompt('nhập tử số 2')),parseInt(prompt('nhập mẫu số 2')));-->
+<!--     let cong=phanSo1.Cong(phanSo2);-->
+<!--     let tru=phanSo1.Tru(phanSo2);-->
+<!--     let nhan=phanSo1.Nhan(phanSo2);-->
+<!--     let chia=phanSo1.Chia(phanSo2);-->
+<!--   alert('cộng= '+cong+'\n'+'trừ= '+tru+'\n'+'nhân= '+nhan+'\n'+'chia= '+chia);-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--    let listStudent=[];-->
+<!--    let total=[];-->
+<!--    class Candidate{-->
+<!--        setCode(code){-->
+<!--            this.code=code;-->
+<!--        }-->
+<!--        setName(name){-->
+<!--            this.name=name;-->
+<!--        }-->
+<!--        setBirthday(birthday){-->
+<!--            this.birthday=birthday;-->
+<!--        }-->
+<!--        setGender(gender){-->
+<!--            this.gender=gender;-->
+<!--        }-->
+<!--        setDiemThiToan(toan){-->
+<!--            this.toan=toan;-->
+<!--        }-->
+<!--        setDiemThiVan(van){-->
+<!--            this.van=van;-->
+<!--        }-->
+<!--        setDiemThiAnh(anh){-->
+<!--            this.anh=anh;-->
+<!--        }-->
+<!--        getCode(){-->
+<!--            return this.code;-->
+<!--        }-->
+<!--        getName(){-->
+<!--            return this.name;-->
+<!--        }-->
+<!--        getBirthday(){-->
+<!--            return this.birthday;-->
+<!--        }-->
+<!--        getGender(){-->
+<!--            return this.gender;-->
+<!--        }-->
+<!--        getDiemThiToan(){-->
+<!--            return this.toan;-->
+<!--        }-->
+<!--        getDiemThiVan(){-->
+<!--            return this.van;-->
+<!--        }-->
+<!--        getDiemThiAnh(){-->
+<!--            return this.anh;-->
+<!--        }-->
+<!--        toal(){-->
+<!--            let total=this.toan+this.van+this.anh;-->
+<!--            return total;-->
+<!--        }-->
+<!--    }-->
+<!--    function Main() {-->
+<!--        let choose=prompt('1. Add new student'+'\n2. Show total student > 15');-->
+<!--        switch (choose) {-->
+<!--            case '1':-->
+<!--                AddNewStudent();-->
+<!--                break;-->
+<!--            case '2':-->
+<!--                Show();-->
+<!--                break;-->
+<!--            default:-->
+<!--                alert('fail');-->
+
+<!--        }-->
+<!--    }-->
+<!--    function AddNewStudent() {-->
+<!--        let candidate=new Candidate();-->
+<!--        let code=prompt('nhập mã');-->
+<!--        let name=prompt('nhập tên');-->
+<!--        let gender=prompt('nhập giới tính');-->
+<!--        let birthday=prompt('nhập ngày sinh');-->
+<!--        let toan=parseInt(prompt('nhập điểm toán'));-->
+<!--        let van=parseInt(prompt('nhập điểm văn'));-->
+<!--        let anh=parseInt(prompt('nhập điểm anh'));-->
+<!--        candidate.setName(name);-->
+<!--        candidate.setCode(code);-->
+<!--        candidate.setGender(gender);-->
+<!--        candidate.setBirthday(birthday);-->
+<!--        candidate.setDiemThiToan(toan);-->
+<!--        candidate.setDiemThiVan(van);-->
+<!--        candidate.setDiemThiAnh(anh);-->
+<!--        listStudent.push(candidate);-->
+<!--        Main();-->
+<!--    }-->
+<!--    function Show() {-->
+<!--        for (let i=0;i<listStudent.length;i++){-->
+<!--            if (listStudent[i].toal()>15){-->
+<!--                total.push(listStudent[i]);-->
+<!--            }-->
+<!--        }-->
+<!--        for (let i=0;i<total.length;i++){-->
+<!--            alert(total[i].name);-->
+<!--        }-->
+
+<!--    }-->
+<!--    Main();-->
+
+<!--</script>-->
+
+</body>
+</html>

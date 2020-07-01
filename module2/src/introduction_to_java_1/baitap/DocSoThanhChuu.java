@@ -139,39 +139,40 @@ public class DocSoThanhChuu {
             } else {
                 switch (number / 100) {
                     case 1:
-                        count = count + "one hundred";
+                        count = count + " one hundred ";
                         break;
                     case 2:
-                        count = count + "two hundred";
+                        count = count + " two hundred ";
                         break;
                     case 3:
-                        count = count + "three hundred";
+                        count = count + " three hundred ";
                         break;
                     case 4:
-                        count = count + "four hundred";
+                        count = count + " four hundred ";
                         break;
                     case 5:
-                        count = count + "five hundred";
+                        count = count + " five hundred ";
                         break;
                     case 6:
-                        count = count + "six hundred";
+                        count = count + " six hundred ";
                         break;
                     case 7:
-                        count = count + "seven hundred";
+                        count = count + " seven hundred ";
                         break;
                     case 8:
-                        count = count + "eight hundred";
+                        count = count + " eight hundred ";
                         break;
                     case 9:
-                        count = count + "nine hundred";
+                        count = count + " nine hundred ";
                         break;
                 }
 
                 int number12 = number % 100;
+                count = count + " and ";
                 if (number12 > 0) {
                     switch (number12 / 10) {
                         case 1:
-                            count = count + " ten ";
+                            count = count + " eleven ";
                             break;
                         case 2:
                             count = count + "twenty";
@@ -200,7 +201,7 @@ public class DocSoThanhChuu {
                     }
 
                     if (number12 % 10 > 0) {
-                        count = count + " and ";
+                        count = count + " ";
                         switch (number12 % 10) {
                             case 1:
                                 count = count + "one";

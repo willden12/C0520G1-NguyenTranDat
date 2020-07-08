@@ -13,8 +13,9 @@ public class TestColorable {
             Shape[] shapes = {circle,rectangle,square};
             for (Shape i: shapes){
                 if (i instanceof Square){
-                    Square a = (Square) i;
-                    System.out.println(a.howToColor());;
+                    ((Square) i).howToColor();
+//                    Square a = (Square) i;Ep kiểu tường minh Cach 2
+                    System.out.println(((Square) i).howToColor());;
                 }
             }
         }

@@ -1,6 +1,8 @@
 package abstract_class_va_interface.baitap.dulieu;
 
-public class Rectangle extends Shape {
+import abstract_class_va_interface.baitap.resizeable.Resizeable;
+
+public class Rectangle extends Shape implements Resizeable {
     private double width = 1.0;
     private double length = 1.0;
 
@@ -50,6 +52,12 @@ public class Rectangle extends Shape {
                 + getLength()
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        this.width= this.width*percent;
+        this.length = this.length*percent;
     }
 }
 

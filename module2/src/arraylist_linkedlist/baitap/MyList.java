@@ -43,6 +43,7 @@ public class MyList <E> {
         size++;
         return true;
     }
+
     public void add(E element,int index) {
         if (index > elements.length) {
             throw new IllegalArgumentException("index = "+index);

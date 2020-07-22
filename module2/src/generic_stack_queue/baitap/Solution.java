@@ -3,7 +3,7 @@ package generic_stack_queue.baitap;
 public class Solution {
     public static void main(String[] args) {
         // Create a queue and initialize front and rear
-        Queue  q = new Queue();
+        Queue<Integer>  q = new Queue();
         // Inserting elements in Circular Queue
         q.enQueue(14);
         q.enQueue(22);

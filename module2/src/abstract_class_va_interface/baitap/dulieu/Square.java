@@ -43,7 +43,7 @@ public class Square extends Rectangle implements Colorable {
 
     @Override
     public String howToColor() {
-        return "dat la 1 con ga" ;
+        return "Ban that la dai dot" ;
     }
 }
 

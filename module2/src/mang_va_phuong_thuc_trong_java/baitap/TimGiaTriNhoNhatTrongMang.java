@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class TimGiaTriNhoNhatTrongMang {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("bạn mún nhập bao nhiu phần tử");
+        System.out.println("Ban mun nhap bao nhiu phan tu");
         int number = scanner.nextInt();
         int[] arr = new int[number];
         for (int i = 0; i < arr.length; i++) {
-            System.out.print("Nhập phần tử " + (i + 1) + ": ");
+            System.out.print("Nhap phan tu " + (i + 1) + ": ");
             arr[i] = scanner.nextInt();
         }
         int min = arr[0];
@@ -18,7 +18,7 @@ public class TimGiaTriNhoNhatTrongMang {
                 min = arr[i];
             }
         }
-        System.out.println("Giá trị nhỏ nhất :" + min);
+        System.out.println("Gia tri nho nhat :" + min);
 
     }
 

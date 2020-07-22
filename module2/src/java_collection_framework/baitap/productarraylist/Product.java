@@ -1,4 +1,4 @@
-package java_collection_framework.baitap;
+package java_collection_framework.baitap.productarraylist;
 
 public class Product {
     private String name;
@@ -30,11 +30,11 @@ public class Product {
         this.id = id;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = (int) price;
     }
 

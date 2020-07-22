@@ -1,10 +1,10 @@
-package java_collection_framework.baitap;
+package java_collection_framework.baitap.productarraylist;
 
 import java.util.*;
 
-public class ProductManager {
+public class ProductArrayListTest {
     public static void main(String[] args) {
-        ProductManager manager = new ProductManager();
+        ProductArrayListTest manager = new ProductArrayListTest();
         Scanner scanner = new Scanner(System.in);
         int choice;
         boolean check = true;
@@ -51,26 +51,26 @@ public class ProductManager {
     public void addProduct() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input ID: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = scanner.nextInt();
         System.out.print("Input your name: ");
+        scanner.nextLine();
         String name = scanner.nextLine();
         System.out.print("Input price: ");
-        int price = Integer.parseInt(scanner.nextLine());
+        int price =scanner.nextInt();
         Product product1 = new Product(id, name, price);
         myListProduct.add(product1);
         System.out.println("List of Products: ");
         for (Product product : myListProduct) {
             System.out.println("ID: " + product.getId() + ", name: " + product.getName() + " Price: " + product.getPrice() + "USD");
         }
-        System.out.println("-------------------------");
+        System.out.println("///////////////////////////////////////////////////////////////");
 
     }
 
     public static void editProduct() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println();
         System.out.print("Input product's ID you want to edit: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = scanner.nextInt();
         System.out.print("Editing name of product: ");
         String name = scanner.nextLine();
         for (Product product : myListProduct) {
@@ -88,11 +88,12 @@ public class ProductManager {
     public static void deleteProduct() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.print("\n" + "Enter the product id you want to delete: ");
+        System.out.print("\n" + "Enter the product id you want to delete : ");
         int id = scanner.nextInt();
         for (int i = 0; i < myListProduct.size(); i++) {
             if (myListProduct.get(i).getId() == id) {
-                myListProduct.remove(i);
+                 myListProduct.remove(i);
+                 break;
             }
         }
         System.out.println("List of product: ");
@@ -112,7 +113,6 @@ public class ProductManager {
     }
 
     public static void findProduct() {
-        System.out.println();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the product name to search: ");
         String name = scanner.nextLine();

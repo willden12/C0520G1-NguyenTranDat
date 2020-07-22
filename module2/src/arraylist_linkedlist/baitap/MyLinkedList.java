@@ -82,7 +82,7 @@ public class MyLinkedList<E> {
         if(index<0 || index>numNodes){
             throw new IllegalArgumentException("Error index: "+index);
         }
-        // khai báo biến temp trỏ đến head 29:07
+        // khai báo biến temp trỏ đến head
         Node temp = head;
         Object data;
 

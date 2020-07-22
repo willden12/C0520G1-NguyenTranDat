@@ -54,8 +54,22 @@ public class ProductLinkedList {
 
 
     public static void addProduct(Scanner scanner, List<Product_1> myLinkedListProduct) {
-        System.out.print("Input ID : ");
-        int id = scanner. nextInt();
+        int id;
+        boolean check = true;
+        do {
+
+            System.out.print("Input ID : ");
+            id = scanner. nextInt();
+            for (Product_1 product : myLinkedListProduct){
+                if (product.getId() == id || id < 0){
+                    check= false;
+                    System.out.println("Please enter ID .");
+                    break;
+                }else {
+                    check = true;
+                }
+            }
+        }while (!check);
         System.out.print("Input your name: ");
         scanner.nextLine();
         String name = scanner.nextLine();

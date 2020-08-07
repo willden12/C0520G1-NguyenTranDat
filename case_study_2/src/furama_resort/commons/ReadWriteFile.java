@@ -1,12 +1,12 @@
 package furama_resort.commons;
 
 import furama_resort.controllers.MainController;
+import furama_resort.models.*;
 
 import java.io.*;
 import java.util.List;
 
-public class ReadWriteFile {
-    public static String[] arrayTemp;
+public class ReadWriteFile {public static String[] arrayTemp;
     public static List<String> readerFile(String filePath) {
         File file = new File(filePath);
         try {
@@ -20,7 +20,7 @@ public class ReadWriteFile {
                 arrayTemp = line.split(",");
                 if (filePath.equals(MainController.FILE_VILLA)) {
                     String id = ReadWriteFile.arrayTemp[0];
-                    String name = (ReadWriteFile.arrayTemp[1]);
+                    String name = ReadWriteFile.arrayTemp[1];
                     String userArena = ReadWriteFile.arrayTemp[2];
                     String price = ReadWriteFile.arrayTemp[3];
                     String maxPeople = ReadWriteFile.arrayTemp[4];

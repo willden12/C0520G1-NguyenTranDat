@@ -1,7 +1,7 @@
-package furama_resort.Exception;
+package furama_resort.exception;
 
-public class IdException extends Exception {
-    public IdException(String message) {
+public class IDException extends Exception {
+    public IDException(String message) {
         super(message);
     }
 

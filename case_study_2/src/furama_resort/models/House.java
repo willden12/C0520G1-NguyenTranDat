@@ -1,46 +1,61 @@
 package furama_resort.models;
 
-public class House extends Services implements Comparable<House> {
-    private String roomStandard;        //tiêu chuẩn phòng
-    private String otherFacilities;     //tiện nghi khác
-    private int numberOfFloors;         // số tầng nhà
+public class House extends Services {
+    private String roomStandard;
+    private String description;
+    private String numberFloors;
 
-    public House(String id, String nameService, double usableArea, int rentalCosts, int maxNumberOfPeople,
-                 String typeOfRent, String roomStandard, String otherFacilities, int numberOfFloors) {
-        super(id, nameService, usableArea, rentalCosts, maxNumberOfPeople, typeOfRent);
+    public House() {
+    }
+
+    public House(String roomStandard, String description, String numberFloors) {
         this.roomStandard = roomStandard;
-        this.otherFacilities = otherFacilities;
-        this.numberOfFloors = numberOfFloors;
+        this.description = description;
+        this.numberFloors = numberFloors;
+    }
+
+    public House(String id,String name, String userArea, String price, String maxPeople, String rentType, String roomStandard, String description, String numberFloors) {
+        super(name, userArea, price, maxPeople, rentType, id);
+        this.roomStandard = roomStandard;
+        this.description = description;
+        this.numberFloors = numberFloors;
     }
 
     public String getRoomStandard() {
         return roomStandard;
     }
 
-    public String getOtherFacilities() {
-        return otherFacilities;
+    public void setRoomStandard(String roomStandard) {
+        this.roomStandard = roomStandard;
     }
 
-    public int getNumberOfFloors() {
-        return numberOfFloors;
+    public String getDescription() {
+        return description;
     }
 
-    @Override
-    public void showInfo() {
-        System.out.println(this.toString());
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getNumberFloors() {
+        return numberFloors;
+    }
+
+    public void setNumberFloors(String numberFloors) {
+        this.numberFloors = numberFloors;
     }
 
     @Override
     public String toString() {
-        return "House{" +super.toString()+
-                "roomStandard='" + roomStandard + '\'' +
-                ", otherFacilities='" + otherFacilities + '\'' +
-                ", numberOfFloors=" + numberOfFloors+
+        return "House{" + super.toString()+
+                " roomStandard='" + roomStandard + '\'' +
+                ", description='" + description + '\'' +
+                ", numberFloors='" + numberFloors + '\'' +
                 '}';
     }
 
     @Override
-    public int compareTo(House o) {
-        return this.getNameService().compareTo(o.getNameService());
+    public void showInform() {
+        System.out.println(this.toString());
     }
 }

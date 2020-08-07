@@ -1,4 +1,4 @@
-package furama_resort.Exception;
+package furama_resort.exception;
 
 public class NameException extends Exception {
     public NameException(String messenger){

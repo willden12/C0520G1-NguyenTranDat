@@ -1,33 +1,39 @@
 package furama_resort.models;
 
-public class Employee {
-    private String nameEmployee;
-    private int age;
+public class Employee{
+    private String id;
+    private String name;
+    private String age;
     private String address;
 
     public Employee() {
     }
 
-    public Employee(String nameEmployee, int age, String address) {
-        this.nameEmployee = nameEmployee;
+    public Employee(String id,String name, String age, String address) {
+        this.id = id;
+        this.name = name;
         this.age = age;
         this.address = address;
     }
-
-    public String getNameEmployee() {
-        return nameEmployee;
+    public String getId(){
+        return id;
+    }public void setId(String id){
+        this.id = id;
     }
 
-    public void setNameEmployee(String nameEmployee) {
-        this.nameEmployee = nameEmployee;
+    public String getName() {
+        return name;
     }
 
-    public int getAge() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAge() {
         return age;
     }
 
-
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -42,9 +48,11 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "nameEmployee='" + nameEmployee + '\'' +
-                ", age=" + age +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }
+
 }

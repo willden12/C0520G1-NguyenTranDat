@@ -1,50 +1,45 @@
 package furama_resort.models;
 
-public class Customer {
-    private String nameCustomer;
+public class Customer implements Comparable<Customer> {
+    private String name;
     private String birthday;
     private String gender;
-    private String idCard;
-    private int phoneNumber;
+    private String id;
+    private String numberPhone;
     private String email;
-    private String typeOfCustomer;
+    private String typeCustomer;
     private String address;
-    private Services servicesCustomer;
+    private Services userService;
+
+    public Services getUserService() {
+        return userService;
+    }
+
+    public void setUserService(Services userService) {
+        this.userService = userService;
+    }
+
 
     public Customer() {
     }
 
-    public Customer(String nameCustomer, String birthday, String gender, String idCard, int phoneNumber,
-                    String email, String typeOfCustomer, String address) {
-        this.nameCustomer = nameCustomer;
+    public Customer(String name, String birthday, String gender, String id, String numberPhone, String email, String typeCustomer, String address) {
+        this.name = name;
         this.birthday = birthday;
         this.gender = gender;
-        this.idCard = idCard;
-        this.phoneNumber = phoneNumber;
+        this.id = id;
+        this.numberPhone = numberPhone;
         this.email = email;
-        this.typeOfCustomer = typeOfCustomer;
+        this.typeCustomer = typeCustomer;
         this.address = address;
     }
 
-    public Customer(String nameCustomer, String birthday, String gender, String idCard, int phoneNumber, String email,
-                    String typeOfCustomer, String address, Services servicesCustomer) {
-        this.nameCustomer = nameCustomer;
-        this.birthday = birthday;
-        this.gender = gender;
-        this.idCard = idCard;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.typeOfCustomer = typeOfCustomer;
-        this.address = address;
-        this.servicesCustomer = servicesCustomer;
+    public String getName() {
+        return name;
     }
 
-    public String getNameCustomer() {
-        return nameCustomer;
-    }
-
-    public void setNameCustomer(String nameCustomer) {
-        this.nameCustomer = nameCustomer;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getBirthday() {
@@ -63,20 +58,20 @@ public class Customer {
         this.gender = gender;
     }
 
-    public String getIdCard() {
-        return idCard;
+    public String getId() {
+        return id;
     }
 
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
+    public String getNumberPhone() {
+        return numberPhone;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setNumberPhone(String numberPhone) {
+        this.numberPhone = numberPhone;
     }
 
     public String getEmail() {
@@ -87,12 +82,12 @@ public class Customer {
         this.email = email;
     }
 
-    public String getTypeOfCustomer() {
-        return typeOfCustomer;
+    public String getTypeCustomer() {
+        return typeCustomer;
     }
 
-    public void setTypeOfCustomer(String typeOfCustomer) {
-        this.typeOfCustomer = typeOfCustomer;
+    public void setTypeCustomer(String typeCustomer) {
+        this.typeCustomer = typeCustomer;
     }
 
     public String getAddress() {
@@ -103,29 +98,45 @@ public class Customer {
         this.address = address;
     }
 
-    public Services getServicesCustomer() {
-        return servicesCustomer;
-    }
-
-    public void setServicesCustomer(Services servicesCustomer) {
-        this.servicesCustomer = servicesCustomer;
-    }
-
     @Override
     public String toString() {
         return "Customer{" +
-                "nameCustomer='" + nameCustomer + '\'' +
+                "name='" + name + '\'' +
                 ", birthday='" + birthday + '\'' +
                 ", gender='" + gender + '\'' +
-                ", idCard='" + idCard + '\'' +
-                ", phoneNumber=" + phoneNumber +
+                ", id='" + id + '\'' +
+                ", numberPhone='" + numberPhone + '\'' +
                 ", email='" + email + '\'' +
-                ", typeOfCustomer='" + typeOfCustomer + '\'' +
+                ", typeCustomer='" + typeCustomer + '\'' +
                 ", address='" + address + '\'' +
-//                ", servicesCustomer=" + servicesCustomer +
+                ", userService=" + userService +
                 '}';
     }
-    public void showInfo(){
-        System.out.println(this.toString());
+
+    public void showInfor() {
+        System.out.println("Customer{" +
+                "name='" + name + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", gender='" + gender + '\'' +
+                ", id='" + id + '\'' +
+                ", numberPhone='" + numberPhone + '\'' +
+                ", email='" + email + '\'' +
+                ", typeCustomer='" + typeCustomer + '\'' +
+                ", address='" + address + '\'' +
+                '}');
+    }
+
+    @Override
+    public int compareTo(Customer o1) {
+        int value=name.compareTo(o1.name);
+        if (value==0){
+            int yearFirst = Integer.parseInt(this.birthday.split("/")[2]);
+            int yearSecond = Integer.parseInt(this.birthday.split("/")[2]);
+            value=yearFirst-yearSecond;
+//            if (yearFirst>yearSecond){value=1;}
+//            else if (yearFirst<yearSecond){value=-1;}
+//            else {value=0;}
+        }
+        return value;
     }
 }

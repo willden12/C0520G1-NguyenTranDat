@@ -1,33 +1,33 @@
 package furama_resort.models;
 
-public class Room extends Services implements Comparable<Room>{
-    private String freeAccompanyingService;      // dịch vụ miễn phí đi kèm
-
-    public Room(String id, String nameService, double usableArea, int rentalCosts, int maxNumberOfPeople, String typeOfRent, String freeAccompanyingService) {
-        super(id, nameService, usableArea, rentalCosts, maxNumberOfPeople, typeOfRent);
-        this.freeAccompanyingService = freeAccompanyingService;
+public class Room extends Services {
+    private ExtraService extraService;
+    public Room(String id,String name, String userArea, String price, String maxPeople, String rentType,  ExtraService extraService) {
+        super(name, userArea, price, maxPeople, rentType, id);
+        this.extraService = extraService;
     }
 
-    public String getFreeAccompanyingService() {
-        return freeAccompanyingService;
+    public Room(String id, String name, String userArena, String price, String maxPeople, String rentType, String freeService) {
     }
 
-    @Override
-    public void showInfo() {
-        System.out.println(this.toString());
+
+    public ExtraService getExtraService() {
+        return extraService;
     }
 
+    public void setExtraService(ExtraService extraService) {
+        this.extraService = extraService;
+    }
 
     @Override
     public String toString() {
         return "Room{" +super.toString()+
-                "reeAccompanyingService='" + freeAccompanyingService +
+                "extraService=" + extraService +
                 '}';
     }
 
     @Override
-    public int compareTo(Room o) {
-        return this.getNameService().compareTo(o.getNameService());
+    public void showInform() {
+        System.out.println(this.toString());
     }
 }
-

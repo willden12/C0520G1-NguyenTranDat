@@ -7,7 +7,7 @@ import java.util.Comparator;
 public class CompareCustomer implements Comparator<Customer> {
     @Override
     public int compare(Customer o1, Customer o2) {
-        int value = o1.getNameCustomer().compareTo(o2.getNameCustomer());
+        int value = o1.getName().compareTo(o2.getName());
         if (value != 0) {
             return value;
         } else {

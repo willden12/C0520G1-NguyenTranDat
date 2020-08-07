@@ -1,54 +1,73 @@
 package furama_resort.models;
 
-public class Villa extends Services implements Comparable<Villa> {
-    private String roomStandard;        //tiêu chuẩn phòng
-    private String otherFacilities;     //tiện nghi khác
-    private double poolArea;            // diện tích hồ bơi
-    private int numberOfFloors;         // số tầng nhà
+public class Villa extends Services {
+    private String roomStandard;
+    private String description;
+    private String areaPool;
+    private String numberFloors;
 
-    public Villa(String id, String nameService, double usableArea, int rentalCosts, int maxNumberOfPeople,
-                 String typeOfRent, String roomStandard, String otherFacilities, double poolArea, int numberOfFloors) {
-        super(id, nameService, usableArea, rentalCosts, maxNumberOfPeople, typeOfRent);
+    public Villa() {
+    }
+
+    public Villa(String roomStandard, String description, String areaPool, String numberFloors) {
         this.roomStandard = roomStandard;
-        this.otherFacilities = otherFacilities;
-        this.poolArea = poolArea;
-        this.numberOfFloors = numberOfFloors;
+        this.description = description;
+        this.areaPool = areaPool;
+        this.numberFloors = numberFloors;
+    }
+
+    public Villa(String id, String name, String userArea, String price, String maxPeople, String rentType, String roomStandard, String description, String areaPool, String numberFloors) {
+        super(name, userArea, price, maxPeople, rentType, id);
+        this.roomStandard = roomStandard;
+        this.description = description;
+        this.areaPool = areaPool;
+        this.numberFloors = numberFloors;
     }
 
     public String getRoomStandard() {
         return roomStandard;
     }
 
-    public String getOtherFacilities() {
-        return otherFacilities;
+    public void setRoomStandard(String roomStandard) {
+        this.roomStandard = roomStandard;
     }
 
-    public double getPoolArea() {
-        return poolArea;
+    public String getDescription() {
+        return description;
     }
 
-    public int getNumberOfFloors() {
-        return numberOfFloors;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    @Override
-    public void showInfo() {
-        System.out.println(this.toString());
+    public String getAreaPool() {
+        return areaPool;
+    }
+
+    public void setAreaPool(String areaPool) {
+        this.areaPool = areaPool;
+    }
+
+    public String getNumberFloors() {
+        return numberFloors;
+    }
+
+    public void setNumberFloors(String numberFloors) {
+        this.numberFloors = numberFloors;
     }
 
     @Override
     public String toString() {
-        return "Villa{" +super.toString()+
-                "roomStandard='" + roomStandard + '\'' +
-                ", otherFacilities='" + otherFacilities + '\'' +
-                ", poolArea=" + poolArea +
-                ", numberOfFloors=" + numberOfFloors +
+        return "Villa{" + super.toString()+
+                " roomStandard='" + roomStandard + '\'' +
+                ", description='" + description + '\'' +
+                ", arenaPool='" + areaPool + '\'' +
+                ", numberFloors='" + numberFloors + '\'' +
                 '}';
     }
 
-
     @Override
-    public int compareTo(Villa o) {
-        return this.getNameService().compareTo(o.getNameService());
+    public void showInform() {
+        System.out.println(this.toString());
     }
 }

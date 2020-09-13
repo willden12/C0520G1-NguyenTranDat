@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Congnhan{
+        constructor(stt,hovaten,ngaythangnamsinh,diachi,luong,chucvu) {
+            this.stt = stt;
+            this.hovaten = hovaten;
+            this.ngaythangnamsinh = ngaythangnamsinh;
+            this.diachi = diachi;
+            this.luong = luong;
+            this.chucvu = chucvu;
+        }
+        getSTT(){
+            return this.stt;
+        }
+        getHovaten(){
+            return this.hovaten;
+        }
+        getNgaythangnamsinh(){
+            return this.ngaythangnamsinh;
+        }
+        getDiachi(){
+            return this.diachi;
+        }
+        getLuong(){
+            return this.luong;
+        }
+        getChucvu(){
+            return this.chucvu;
+        }
+        setSTT(stt){
+            this.stt = stt;
+        }
+        setHovaten(hovaten){
+            this.hovaten = hovaten;
+        }
+        setNgaythangnamsinh(ngaythangnam){
+            this.ngaythangnamsinh = ngaythangnam;
+        }
+        setDiachi(diachi){
+            this.diachi = diachi;
+        }
+        setLuong(luong){
+            this.luong = luong;
+        }
+        setChucvu(chucvu){
+            this.chucvu = chucvu;
+        }
+
+    }
+    let congNhanList = [];
+    let congNhan1 = new Congnhan('001', 'Nguyen Van A', '20/04/1990', 'Đà Nẵng', '2000', 'Nhân Viên');
+    let congNhan2 = new Congnhan('007', 'Nguyen Thi B', '25/08/1980', 'Quảng Nam', '3000', 'Nhân Viên');
+    let congNhan3 = new Congnhan('003', 'Phan Van C', '30/10/1970', 'Điện Bàn', '5000', 'Nhân Viên');
+    let congNhan4 = new Congnhan('009', 'Chi C', '22/07/1998', 'QUảng Ngãi', '7000', 'Giám Đốc');
+    let congNhan5 = new Congnhan('002', 'Tran Dan', '10/04/1985', 'Mỹ', '9000', 'Chủ Tịch');
+    let congNhan6 = new Congnhan('004', 'Thi No', '28/02/1990', 'Úc', '2000', 'Nhân Viên');
+    congNhanList.push(congNhan1);
+    congNhanList.push(congNhan2);
+    congNhanList.push(congNhan3);
+    congNhanList.push(congNhan4);
+    congNhanList.push(congNhan5);
+    congNhanList.push(congNhan6);
+    displayMainMenu();
+    let arr = [];
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1. Hiển thị danh sách công nhân." + "\n2. Exit"));
+        switch (choose) {
+            case 1: {
+                displayInformation();
+                break;
+            }
+            case 2: {
+                eXit();
+                break;
+            }
+            default: {
+                alert("Failed");
+            }
+        }
+    }
+    function displayInformation() {
+
+        let arrSTT = [];
+        for (let i = 0; i < congNhanList.length; i++) {
+            arrSTT.push(parseInt(congNhanList[i].getSTT()));
+        }
+        arrSTT.sort(function (a, b) {
+            if (a > b) return 1;
+            if (a < b) return -1;
+            return 0;
+        });
+        let sortString = "";
+        for (let i = 0; i < arrSTT.length; i++) {
+            for (let x of congNhanList) {
+                if (arrSTT[i] === parseInt(x.getSTT())) {
+                    sortString += (i + 1) + ' STT: ' +
+                        x.getSTT() + ' - Họ và tên: ' +
+                        x.getHovaten() +  ' - Ngày Sinh: '+
+                        x.getNgaythangnamsinh() + ' - Địa chỉ: ' +
+                        x.getDiachi() + ' - Lương: ' +
+                        x.getLuong() +'-Chức vụ-'  +
+                        x.getChucvu() + '\n';
+                }
+            }
+        }alert(sortString)
+    }
+
+    displayMainMenu();
+
+</script>
+
+</body>
+</html>

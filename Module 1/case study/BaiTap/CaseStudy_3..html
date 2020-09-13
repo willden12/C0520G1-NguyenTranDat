@@ -7,12 +7,11 @@
 <body>
 <script>
     let name;
-    let idCard;
+    let cmnd;
     let phoneNumber;
     let birthday;
     let email;
     let address;
-
     let typeCustomer;
     let discount;
     let rentDays;
@@ -21,7 +20,7 @@
     let typeRoom;
     let totalPay;
     let check = false;
-    let a = "";
+    let countName = "";
     name = prompt("Nhập họ tên");
     name = name.trim().toLowerCase();
     for (let i = 0; i<name.length; i++){
@@ -29,48 +28,48 @@
             continue;
         }
         if (i=== 0 || name.charAt(i-1) === " "){
-            a+=name.charAt(i).toUpperCase();
+            countName+=name.charAt(i).toUpperCase();
             continue;
         }
-        a+=name.charAt(i);
+        countName+=name.charAt(i);
     }
-    name=a;
+    name=countName;
     do {
-        idCard = prompt("Nhập số CMND/Căn Cước");
-        if (!isNaN(idCard)){
-            idCard = Number.parseFloat(idCard);
+        cmnd = prompt("Nhập số CMND/Căn Cước");
+        if (!isNaN(cmnd)){
+            cmnd = Number.parseFloat(cmnd);
         }
-        if (!Number.isInteger(idCard)){
+        if (!Number.isInteger(cmnd)){
             alert('Bạn nhập cmnd/căn cước không đúng đinh dạng');
             continue;
         }
-        if (idCard < 100000000 || idCard > 999999999){
+        if (cmnd < 100000000 || cmnd > 999999999){
             alert('Bạn nhập cmnd/căn cước không đúng đinh dạng');
             continue;
         }
         check = true;
-    }while (!check)
+    }while (!check);
     check = false;
     do {
         email = prompt("Nhập email: ");
-        let count = 0;
-        let count2 = 0;
+        let countAt = 0;
+        let countDoc = 0;
         for (let i = 1; i < email.length; i++){
             if (email.charAt(i) == '@'){
-                count ++;
+                countAt ++;
                 for (let j = 0; j < email.length; j ++){
                     if (email.charAt(j) == '.'){
-                        count2 ++
+                        countDoc ++
                     }
                 }
             }
         }
-        if (count !=1 || count2 < 1){
+        if (countAt !=1 || countDoc < 1){
             alert("Email bạn nhập không hợp lệ");
         }else{
             check = true;
         }
-    }while (!check)
+    }while (!check);
     check = false;
     phoneNumber = prompt("Số điện thoại của bạn:");
     do{
@@ -94,7 +93,7 @@
         if (!check){
             alert('ngày sinh không đúng định dạng');
         }
-    }while (!check)
+    }while (!check);
     check=false;
     address = prompt("Nhập địa chỉ: ");
     typeCustomer = prompt('Loại khách hàng' + "\n"+
@@ -117,7 +116,7 @@
         if (!check){
             alert('Bạn nhập chưa đúng');
         }
-    }while (!check)
+    }while (!check);
     check = false;
     typerService = prompt("Loại dịch vụ: " + "\n"+
         "Villa" + "\n"+
@@ -148,7 +147,7 @@
     switch (choose) {
         case 1:{// đang so sánh kiểu số: "1" or dùng parseInt(Float) trên prompt
             alert("Tên: "+name+'\n'+
-                "CMND "+idCard+ '\n'+
+                "CMND "+cmnd+ '\n'+
                 "Ngày sinh" +birthday+ '\n'+
                 "Số điện thoại: " +phoneNumber+ '\n'+
                 "Email: " +email+ '\n'+
@@ -164,7 +163,7 @@
         }
         case 2:{
             let chooseEdit = parseInt(prompt("1. Tên: "+name+'\n'+
-                "2. CMND "+idCard+ '\n'+
+                "2. CMND "+cmnd+ '\n'+
                 "3. Ngày sinh" +birthday+ '\n'+
                 "4. Số điện thoại: " +phoneNumber+ '\n'+
                 "5. Email: " +email+ '\n'+
@@ -182,7 +181,7 @@
                     break;
                 }
                 case 2:{
-                    idCard = prompt("Nhập số CMND ");
+                    cmnd = prompt("Nhập số CMND ");
                     break;
                 }
                 case 3:{
@@ -230,7 +229,7 @@
                 }
             }
             alert("Tên: "+name+'\n'+
-                "CMND "+idCard+ '\n'+
+                "CMND "+cmnd+ '\n'+
                 "Ngày sinh" +birthday+ '\n'+
                 "Số điện thoại: " +phoneNumber+ '\n'+
                 "Email: " +email+ '\n'+
@@ -255,8 +254,8 @@
             let temp = 0;
             if (address === "Đà Nẵng"){
                 let curenYear = new Date().getFullYear();
-                let sinhNhat = new Date(birthday).getFullYear();
-                let ageCustomer = curenYear - sinhNhat;
+                let birthDay1 = new Date(birthday).getFullYear();
+                let ageCustomer = curenYear - birthDay1;
                 if (ageCustomer > 30){
                     temp += 2;
                 }
@@ -287,12 +286,11 @@
                 temp += 2;
             }
             alert("Tên: "+name+'\n'+
-                "CMND "+idCard+ '\n'+
+                "CMND "+cmnd+ '\n'+
                 "Ngày sinh" +birthday+ '\n'+
                 "Số điện thoại: " +phoneNumber+ '\n'+
                 "Email: " +email+ '\n'+
                 "Địa chỉ: " +address+ '\n'+
-                "Giới tính: " +gender+ '\n'+
                 "Loại khách hàng: " +typeCustomer+ '\n'+
                 "Loại phòng: " +typeRoom+ '\n'+
                 "Loại dịch vụ: " +typerService+ '\n'+
@@ -300,14 +298,13 @@
                 "Số ngày thuê: " +rentDays+ '\n'+
                 "Số lượng đi kèm: " +quantityIncluded+ '\n'+
                 "Số tiền cần thanh toán: " + (money * rentDays - temp));
-            // alert("Tổng tiền = " + (money * rentDays - temp));
+
             break;
         }
         default:{
             alert("Sự lựa chọn của bạn không có trong trình đơn: ");
         }
     }
-    // totalPay = 300*rentDays*(1-discount/100);
 
 </script>
 

@@ -11,18 +11,18 @@
         let choose = parseInt(prompt("1. Thêm khách hàng. " + '\n' + "2. Xoá khách hàng. "));
         switch (choose) {
             case 1: {
-                let num = parseInt(prompt('NHập số khách hàng cần thêm vào.'));
+                let num = parseInt(prompt('Nhập số khách hàng cần thêm vào.'));
                 for (let i = 0; i < num; i++) {
                     let nameCustomer = prompt('Nhập tên khách hàng: ');
                     arrNameCustomer.push(nameCustomer);
                 }
-                let tam = "";
+                let recult = "";
                 arrNameCustomer.sort();
-                arrNameCustomer.reverse();// sắp xếp ngược lại từ z -> a
+                // arrNameCustomer.reverse();// sắp xếp ngược lại từ z -> a
                 for (let i = 0; i < arrNameCustomer.length; i++) {
-                    tam += (i + 1) + ". " + arrNameCustomer[i] + "\n";
+                    recult += (i + 1) + ". " + arrNameCustomer[i] + "\n";
                 }
-                alert(tam);
+                alert(recult);
                 break;
             }
             case 2:{
@@ -37,13 +37,13 @@
                 if (!check){
                     alert("Tên khách hàng bạn muốn xoá không có trong mảng");
                 }
-                let tam = "";
+                let temp = "";
                 arrNameCustomer.sort();
-                arrNameCustomer.reverse();// sắp xếp ngược lại từ z -> a
+                // arrNameCustomer.reverse();// sắp xếp ngược lại từ z -> a
                 for (let i = 0; i < arrNameCustomer.length; i++) {
-                    tam += (i + 1) + ". " + arrNameCustomer[i] + "\n";
+                    temp += (i + 1) + ". " + arrNameCustomer[i] + "\n";
                 }
-                alert(tam);
+                alert(temp);
                 break;
             }
             default:

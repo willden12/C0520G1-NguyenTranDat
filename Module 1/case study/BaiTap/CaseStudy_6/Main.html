@@ -12,7 +12,7 @@
     let regexemail = /\S+@\S+\.\S+/;
     let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
     let regexphone = /^\d+$/;
-    let ktraCmnd = /^\d{9}$/;
+    let ktraCmnd = /^\d{9,9}$/;
 
     function dispalyMainMenu() {
         let choose = parseInt(prompt('1.Thêm khách hàng.' + '\n' +
@@ -28,6 +28,7 @@
             }
             case 3: {
                 displayTotalPays();
+                break
             }
             default: {
                 alert('false');
@@ -105,11 +106,11 @@
         }
 
         function displayTotalPays() {
-            let tam = "";
+            let tamp = "";
             for (let i = 0; i < listCustomer.length; i++) {
-                tam += i + '. Tên :' + listCustomer[i].getName() + '\n';
+                tamp += i + '. Tên :' + listCustomer[i].getName() + '\n';
             }
-            let chooseDisplay = parseInt(prompt(tam));
+            let chooseDisplay = parseInt(prompt(tamp));
             alert('Tổng tiền của bạn :' + listCustomer[chooseDisplay].totalPays());
         }
     }

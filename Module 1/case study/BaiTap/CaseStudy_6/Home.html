@@ -22,17 +22,14 @@
             '5.Thoát.'));
         switch (choose) {
             case 1:{
-                // alert('Chọn 1 à, chắc chưa????');
                 addNewEmployee();
                 break;
             }
             case 2:{
-                // alert('bạn đã số 3: ');
                 displayInformation();
                 break;
             }
             case 3:{
-                // alert('Chọn số 2 thì tôi sẽ ...');
                 displaySalary();
                 break;
             }
@@ -92,7 +89,7 @@
         do {
             employee.setPhone(prompt("Nhập SDT "));
             if (ktraPhone.test(employee.getPhone())){
-                //Bỏ vào hàm setPhone() là sai vì nó ko gọi dc dữ liều vào mà phải là getPhone()
+
                 checvalid=true;
             }else {
                 alert('Bạn nhập sđt chưa đúng định dạng');
@@ -143,9 +140,9 @@
         }
         let chooseDel = parseInt(prompt("Chọn nhân viên cần xoá:"
             +"\n" + result));
-        let check = prompt("Bạn chắc chắn chứ?");
+        let check = confirm("Bạn chắc chắn chứ?");
         if (check){
-            listEmployee.splice(chooseDel-1,1)
+            listEmployee.splice(chooseDel,1)
         } else deleteEmployee();
         displayMainMenu();
     }
@@ -153,6 +150,7 @@
         alert('Xin chào và hẹn gặp lại.');
     }
     displayMainMenu();
+
 </script>
 </body>
 </html>

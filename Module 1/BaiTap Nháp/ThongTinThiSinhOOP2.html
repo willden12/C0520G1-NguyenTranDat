@@ -1,0 +1,106 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<script>-->
+<!--    class PhanSo {-->
+<!--        constructor(tuSo, mauSo) {-->
+<!--            this.tuSo = tuSo;-->
+<!--            this.mauSo = mauSo;-->
+<!--        }-->
+<!--        getTuSo() {-->
+<!--            return this.tuSo;-->
+<!--        }-->
+<!--        getMauSo() {-->
+<!--            return this.mauSo;-->
+<!--        }-->
+<!--        phepCong(phanSo1,phanSo2) {-->
+<!--            let tuSo = (phanSo1.tuSo*phanSo2.mauSo+phanSo2.tuSo+phanSo1.mauSo);-->
+<!--            let mauSo = phanSo1.mauSo*phanSo2.mauSo;-->
+<!--            return tuSo + "/" + mauSo;-->
+<!--        }-->
+<!--        phepTru(number1,number2) {-->
+<!--            return number1-number2;-->
+<!--        }-->
+<!--        phepNhan(number1,number2) {-->
+<!--            return number1*number2;-->
+<!--        }-->
+<!--        phepChia(number1,number2) {-->
+<!--            return number1/number2;-->
+<!--        }-->
+<!--    }-->
+<!--    let phanSo1=new PhanSo(1,2);-->
+<!--    let phanSo2=new PhanSo(2,3);-->
+<!--    let phanSo3=new PhanSo(0,1);-->
+<!--    alert(phanSo3.phepCong(phanSo1,phanSo2));-->
+<!--    // alert("Kết quả Cộng 2 phân Số là: "+phepCong(phanSo1,phanSo2))-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<!--bài 1 tự thêm phép nhân chia như phép cộng-->
+<!--16 h 43-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Candidate {
+        constructor(code,name,birthday,pointMatch,pointPhysical,pointEnglish) {
+            this.code=code;
+            this.name =name;
+            this.birthday=birthday;
+            this.pointMatch=pointMatch;
+            this.pointPhysical=pointPhysical;
+            this.pointEnglish= pointEnglish;
+        }
+        getCode() {
+            return this.code;
+        }
+        getName() {
+            return this.name;
+        }
+        getBirthday() {
+            return this.birthday;
+        }
+        getPointMatch() {
+            return this.pointMatch;
+        }
+        getPointPhysical() {
+            return this.pointPhysical;
+        }
+        getPointEnglish() {
+            return this.pointEnglish;
+        }
+    }
+    class TestCandidate {
+        constructor(listStudent) {
+            this.listStudent=listStudent;
+        }
+        timSinhVien() {
+            for (let i=0;i<this.listStudent.length;i++) {
+                let tong=  this.listStudent[i].getPointMatch()+this.listStudent[i].getPointPhysical()+this.listStudent[i].getPointEnglish();
+                if (tong>15) {
+                    alert(this.listStudent[i].getCode()+ "\n"
+                        +this.listStudent[i].getName())
+                }
+            }
+        }
+    }
+    let sinhvien = new Candidate("fd21","anh","12/12/1999",8,6,6);
+    let sinhvien1 = new Candidate("fd21","anh1","12/12/1999",8,0,6);
+    let sinhvien2 = new Candidate("fd21","anh2","12/12/1999",8,10,6);
+    let array = [];
+    array.push(sinhvien);
+    array.push(sinhvien1);
+    array.push(sinhvien2);
+    let test = new TestCandidate(array);
+    test.timSinhVien()
+</script>
+</body>
+</html>

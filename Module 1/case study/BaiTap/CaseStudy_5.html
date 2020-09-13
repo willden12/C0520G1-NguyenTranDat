@@ -16,15 +16,19 @@
         switch (choose) {
             case 1:{
                 addNewCustomer();
+                break;
             }
             case 2:{
                 displayInformationCusstomer();
+                break;
             }
             case 3:{
                 editInformationCustomer();
+                break;
             }
             case 4:{
                 deleteCustomer();
+                break;
             }
             case 5:{
                 exit();
@@ -68,11 +72,11 @@
         displayMainMenu();
     }
     function displayInformationCusstomer(){
-        let tam = "";
+        let temp1 = "";
         for (let i =0;i<arrListCustomer.length;i++){
-            tam += i + '. Tên :' + arrListCustomer[i][0]+'\n';
+            temp1 += i + '. Tên :' + arrListCustomer[i][0]+'\n';
         }
-        let chooseDisplay = parseInt(prompt(tam));
+        let chooseDisplay = parseInt(prompt(temp1));
         alert("1. Tên: "+arrListCustomer[chooseDisplay][0]+'\n'+
             "2. CMND "+arrListCustomer[chooseDisplay][1]+ '\n'+
             "3. Ngày sinh" +arrListCustomer[chooseDisplay][2]+ '\n'+
@@ -89,14 +93,11 @@
         displayMainMenu();
     }
     function editInformationCustomer() {
-        let tam = "";
+        let temp2 = "";
         for (let i =0;i<arrListCustomer.length;i++){
-            tam += i + '. Tên :' + arrListCustomer[i][0]+'\n';
+            temp2 += i + '. Tên :' + arrListCustomer[i][0]+'\n';
         }
-        let chooseDisplay = parseInt(prompt(tam));
-        // if (chooseDisplay > (tam+1)){
-        //     editInformationCustomer();
-        // }
+        let chooseDisplay = parseInt(prompt(temp2));
         let chooseEdit = parseInt(prompt("1. Tên: "+arrListCustomer[chooseDisplay][0]+'\n'+
             "2. CMND "+arrListCustomer[chooseDisplay][1]+ '\n'+
             "3. Ngày sinh" +arrListCustomer[chooseDisplay][2]+ '\n'+

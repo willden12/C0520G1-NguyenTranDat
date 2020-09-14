@@ -35,13 +35,12 @@ public class Villa extends Services {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
 
     public String getAreaPool() {
-        return areaPool;
+    return areaPool;
     }
 
     public void setAreaPool(String areaPool) {

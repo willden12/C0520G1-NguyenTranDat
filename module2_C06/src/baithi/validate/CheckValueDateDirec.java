@@ -1,4 +1,4 @@
-package baithi;
+package baithi.validate;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;

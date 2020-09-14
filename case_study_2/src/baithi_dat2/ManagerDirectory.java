@@ -1,4 +1,4 @@
-package bai_thi_quang_2;
+package baithi_dat2;
 
 import java.io.*;
 import java.util.ArrayList;

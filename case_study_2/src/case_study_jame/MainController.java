@@ -3,14 +3,17 @@ package case_study_jame;
 import java.util.*;
 
 public class MainController {
-    public static final String FILE_DICTIONARY = "src/case_study_jame/dictionary/csv.java";
+    public static final String FILE_DICTIONARY = "src/case_study_jame/data/dictionary.csv";
     public static Map<String, Word> wordMap = new HashMap<>();
     public static List<Word> wordList=new LinkedList<>();
     public static void main(String[] args) {
-        displayMainMenu(); }
+        displayMainMenu();
+    }
     static Scanner scanner = new Scanner(System.in);
+
     public static void displayMainMenu() {
-        System.out.print("1.\tWords search\n" +
+
+        System.out.print("1.\tWords want word search\n" +
                 "2.\tAdditional definition of a word\n" +
                 "3.\tDelete item form\n" +
                 "4.\tExport dictionary database\n" +
@@ -35,6 +38,7 @@ public class MainController {
             default:
         }
     }
+
     private static void deleteItemFrom() {
         ReaderWriterFile.readFile(FILE_DICTIONARY);
         Word word = null;
@@ -56,6 +60,8 @@ public class MainController {
             ReaderWriterFile.writeFile("\n", FILE_DICTIONARY);
         }
     }
+
+
     private static void addDefinitionWord() {
         scanner.nextLine();
         System.out.println("Enter key word want add: ");

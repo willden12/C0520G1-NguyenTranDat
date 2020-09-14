@@ -305,24 +305,24 @@
 <!--</script>-->
 
 
-<!--<script>-->
-<!--    Nhập 2 số nguyên dương a và b.-->
-<!--        Sau đó in ra ước chung lớn nhất và bội chung nhỏ nhất của 2 số nguyên dương a và b đó.-->
-<!--        -->
-<!--    let a = parseInt(prompt("input số nhỏ hơn: a "));-->
-<!--    let b = parseInt(prompt("input số lớn hơn: b"));-->
-<!--    let arr =[];-->
-<!--    for(let i=1; i<=a; i++){-->
-<!--        if(a%i==0 && b%i==0){-->
-<!--            arr.push(i);-->
-<!--        }-->
-<!--    }-->
-<!--    let uocChungLonNhat = arr[arr.length-1];-->
-<!--    let boiChungNhoNhat = (a*b)/uocChungLonNhat;-->
+<script>
+    // Nhập 2 số nguyên dương a và b.
+    //     Sau đó in ra ước chung lớn nhất và bội chung nhỏ nhất của 2 số nguyên dương a và b đó.
 
-<!--    alert("Ước chung lớn nhất của: " +a+ " và " + b +" là: " + uocChungLonNhat +"\n" +-->
-<!--        "Bội chung lớn nhất của: " +a+ " và " + b +" là: " + boiChungNhoNhat);-->
-<!--</script>-->
+    let a = parseInt(prompt("input số nhỏ hơn: a "));
+    let b = parseInt(prompt("input số lớn hơn: b"));
+    let arr =[];
+    for(let i=1; i<=a; i++){
+        if(a%i==0 && b%i==0){
+            arr.push(i);
+        }
+    }
+    let uocChungLonNhat = arr[arr.length-1];
+    let boiChungNhoNhat = (a*b)/uocChungLonNhat;
+
+    alert("Ước chung lớn nhất của: " +a+ " và " + b +" là: " + uocChungLonNhat +"\n" +
+        "Bội chung lớn nhất của: " +a+ " và " + b +" là: " + boiChungNhoNhat);
+</script>
 
 
 <!--<script>-->

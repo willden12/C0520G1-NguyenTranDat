@@ -37,7 +37,6 @@ public class ReaderWriterFile {
     }
     public static void writeFile(String str,String filePath){
         File file= new File(filePath);
-
         try {
             if (!file.exists()){
                 throw new FileNotFoundException();

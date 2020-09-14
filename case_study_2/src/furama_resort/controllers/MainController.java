@@ -1,6 +1,7 @@
 package furama_resort.controllers;
 
 import furama_resort.commons.ReadWriteFile;
+import furama_resort.commons.Validate;
 import furama_resort.exception.*;
 import furama_resort.models.*;
 
@@ -128,73 +129,59 @@ public class MainController {
 
 
     private static void addNewVilla() {
-
-        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("================================================================================");
         scanner.nextLine();
-        String id;
-        Matcher matcher;
-        Pattern pattern;
 
+
+        String id;
         boolean checkID = true;
         do {
             System.out.print("Enter ID: ");
             id = scanner.nextLine();
             ReadWriteFile.readerFile(FILE_VILLA);
-            if (villaList.size() >= 1) {
+            if (villaList.size() >=1) {
                 for (Villa villa : villaList) {
-                    if (id.compareTo(villa.getId()) == 0) {
+                    if (id.equals(villa.getId())) {
                         checkID = false;
                     } else {
                         checkID = true;
                     }
                 }
             }
-            pattern = Pattern.compile(REGEX_ID);
-            matcher = pattern.matcher(id);
-        } while (!matcher.matches() || !checkID);
+        } while (!Validate.check(id,REGEX_ID) || !checkID);
 
         String name;
         do {
             System.out.print("Enter Name Villa: ");
             name = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_NAME_SERVICE);
-            matcher = pattern.matcher(name);
-        } while (!matcher.matches());
+        } while (!Validate.check(name,REGEX_NAME_SERVICE));
 
         String userArea;
         do {
-            System.out.print("Enter the area of use");
+            System.out.print("Enter the area of use: ");
             userArea = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_AREA);
-            matcher = pattern.matcher(userArea);
-        } while (!matcher.matches());
+        } while (!Validate.check(userArea, REGEX_AREA));
 
         String price;
         do {
             System.out.print("Enter price Villa: ");
             price = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_PRICE);
-            matcher = pattern.matcher(price);
-        } while (!matcher.matches());
+        } while (!Validate.check(price,REGEX_PRICE));
 
         String maxPeople;
         do {
             System.out.print("Enter number People: ");
             maxPeople = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_MAX_PEOPLE);
-            matcher = pattern.matcher(maxPeople);
-        } while (!matcher.matches());
+        } while (!Validate.check(maxPeople,REGEX_MAX_PEOPLE));
 
-        System.out.println("Enter Type of rent(Hour/Day/month/year): ");
+        System.out.print("Enter Type of rent(Hour/Day/month/year): ");
         String rentType = scanner.nextLine();
 
         String roomStandard;
         do {
             System.out.print("Enter Standard Room: ");
             roomStandard = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_STANDARD);
-            matcher = pattern.matcher(roomStandard);
-        } while (!matcher.matches());
+        } while (!Validate.check(roomStandard,REGEX_STANDARD));
 
         System.out.print("Enter Description Villa: ");
         String description = scanner.nextLine();
@@ -203,18 +190,14 @@ public class MainController {
         do {
             System.out.print("Enter Arena Pool: ");
             areaPool = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_AREA);
-            matcher = pattern.matcher(areaPool);
-        } while (!matcher.matches());
+        } while (!Validate.check(areaPool, REGEX_AREA));
 
 
         String numberFloors;
         do {
             System.out.print("Enter Number Floors :");
             numberFloors = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_NUMBER_FLOORS);
-            matcher = pattern.matcher(numberFloors);
-        } while (!matcher.matches());
+        } while (!Validate.check(numberFloors,REGEX_NUMBER_FLOORS));
 
         villaList.add(new Villa(id, name, userArea, price, maxPeople, rentType, roomStandard, description, areaPool, numberFloors));
         for (int i = villaList.size() - 1; i < villaList.size(); i++) {
@@ -231,65 +214,53 @@ public class MainController {
             ReadWriteFile.writerFile("\n", FILE_VILLA);
         }
         villaList.clear();
-        System.out.println("-----------------------------------------------------------------------------------------");
+        System.out.println("=======================================================================================");
     }
 
     private static void addNewHouse() {
         scanner.nextLine();
 
         String id;
-        Matcher matcher;
-        Pattern pattern;
         do {
             System.out.print("Enter ID: ");
             id = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_ID);
-            matcher = pattern.matcher(id);
-        } while (!matcher.matches());
+        } while (!Validate.check(id,REGEX_ID));
 
         String name;
         do {
             System.out.print("Enter Name House: ");
             name = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_NAME_SERVICE);
-            matcher = pattern.matcher(name);
-        } while (!matcher.matches());
+        } while (!Validate.check(name,REGEX_NAME_SERVICE));
 
         String userArea;
         do {
-            System.out.print("Enter the area of use");
+            System.out.print("Enter the area of use: ");
             userArea = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_AREA);
-            matcher = pattern.matcher(userArea);
-        } while (!matcher.matches());
+        } while (!Validate.check(userArea, REGEX_AREA));
 
         String price;
         do {
             System.out.print("Enter price House: ");
             price = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_PRICE);
-            matcher = pattern.matcher(price);
-        } while (!matcher.matches());
+
+        } while (!Validate.check(price,REGEX_PRICE));
 
 
         String maxPeople;
         do {
             System.out.print("Enter number People: ");
             maxPeople = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_AREA);
-            matcher = pattern.matcher(maxPeople);
-        } while (!matcher.matches());
+        } while (!Validate.check(maxPeople,REGEX_MAX_PEOPLE));
 
-        System.out.println("Enter Type of rent(Hour/Day/month/year): ");
+        System.out.print("Enter Type of rent(Hour/Day/month/year): ");
         String rentType = scanner.nextLine();
 
         String roomStandard;
         do {
             System.out.print("Enter Standard Room: ");
             roomStandard = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_STANDARD);
-            matcher = pattern.matcher(roomStandard);
-        } while (!matcher.matches());
+
+        } while (!Validate.check(roomStandard,REGEX_STANDARD));
 
         System.out.print("Enter Description Villa: ");
         String description = scanner.nextLine();
@@ -298,9 +269,7 @@ public class MainController {
         do {
             System.out.print("Enter Number Floors :");
             numberFloors = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_NUMBER_FLOORS);
-            matcher = pattern.matcher(numberFloors);
-        } while (!matcher.matches());
+        } while (!Validate.check(numberFloors,REGEX_NUMBER_FLOORS));
 
         houseList.add(new House(id, name, userArea, price, maxPeople, rentType, roomStandard, description, numberFloors));
         for (int i = houseList.size() - 1; i < houseList.size(); i++) {
@@ -326,45 +295,36 @@ public class MainController {
         do {
             System.out.print("Enter ID: ");
             id = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_ID);
-            matcher = pattern.matcher(id);
-        } while (!matcher.matches());
+        } while (!Validate.check(id,REGEX_ID));
 
         String name;
         do {
             System.out.print("Enter Name Room: ");
             name = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_NAME_SERVICE);
-            matcher = pattern.matcher(name);
-        } while (!matcher.matches());
+
+        } while (!Validate.check(name,REGEX_NAME_SERVICE));
 
         String userArea;
         do {
             System.out.print("Enter the area of use: ");
             userArea = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_AREA);
-            matcher = pattern.matcher(userArea);
-        } while (!matcher.matches());
+        } while (!Validate.check(userArea, REGEX_AREA));
 
         String price;
         do {
             System.out.print("Enter price Room: ");
             price = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_PRICE);
-            matcher = pattern.matcher(price);
-        } while (!matcher.matches());
+        } while (!Validate.check(price,REGEX_PRICE));
 
 
         String maxPeople;
         do {
             System.out.print("Enter number People: ");
             maxPeople = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_MAX_PEOPLE);
-            matcher = pattern.matcher(maxPeople);
-        } while (!matcher.matches());
+        } while (!Validate.check(maxPeople,REGEX_MAX_PEOPLE));
 
 
-        System.out.print("Enter Type of rent(Hour/Day/month/year: ");
+        System.out.print("Enter Type of rent(Hour/Day/month/year): ");
         String rentType = scanner.nextLine();
 
         String nameExtraService;
@@ -373,13 +333,11 @@ public class MainController {
         do {
             System.out.print("Enter Name Service Included: ");
             nameExtraService = scanner.nextLine();
-            System.out.print("Enter unit Word included: ");
-            unitExtraService = scanner.nextLine();
-            System.out.print("Enter money Word included: ");
-            moneyExtraService = Double.parseDouble(scanner.nextLine());
-            pattern = Pattern.compile(REGEX_SERVICE_EXTRA);
-            matcher = pattern.matcher(nameExtraService);
-        } while (!matcher.matches());
+        } while (!Validate.check(nameExtraService,REGEX_SERVICE_EXTRA));
+        System.out.print("Enter unit Word included: ");
+        unitExtraService = scanner.nextLine();
+        System.out.print("Enter money Word included: ");
+        moneyExtraService = Double.parseDouble(scanner.nextLine());
         ExtraService extraService = new ExtraService(nameExtraService, unitExtraService, moneyExtraService);
         roomList.add(new Room(id, name, userArea, price, maxPeople, rentType, extraService));
         for (int i = roomList.size() - 1; i < roomList.size(); i++) {
@@ -487,6 +445,7 @@ public class MainController {
     }
 
     private static void showAllNameHouseNotDuplicate() {
+        villaList.clear();
         ReadWriteFile.readerFile(FILE_HOUSE);
         Set<String> listHouseSet = new TreeSet<>();
         for (House house : houseList) {
@@ -498,6 +457,7 @@ public class MainController {
     }
 
     private static void showAllNameRoomNotDuplicate() {
+        villaList.clear();
         ReadWriteFile.readerFile(FILE_ROOM);
         Set<String> listRoomSet = new TreeSet<>();
         for (Room room : roomList) {
@@ -515,9 +475,7 @@ public class MainController {
         do {
             System.out.println("Enter Name Customer: ");
             name = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_NAME_CUSTOMER);
-            matcher = pattern.matcher(name);
-            if (!matcher.matches()) {
+            if (!Validate.check(name,REGEX_NAME_CUSTOMER)) {
                 check = false;
             } else {
                 check = true;
@@ -529,15 +487,13 @@ public class MainController {
                     System.out.println(e.toString());
                 }
             }
-        } while (!matcher.matches());
+        } while (!Validate.check(name,REGEX_NAME_CUSTOMER));
 
         String birthday;
         do {
             System.out.println("Enter Birthday of Customer: ");
             birthday = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_BIRTHDAY);
-            matcher = pattern.matcher(birthday);
-            if (!matcher.matches()) {
+            if (!Validate.check(birthday,REGEX_BIRTHDAY)) {
                 check = false;
             } else {
                 check = true;
@@ -549,18 +505,16 @@ public class MainController {
                     System.out.println(e.toString());
                 }
             }
-        } while (!matcher.matches());
+        } while (!Validate.check(birthday,REGEX_BIRTHDAY));
 
         String gender;
         String genderNew;
         do {
             System.out.println("Enter Gender of Customer: ");
             gender = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_GENDER);
-            matcher = pattern.matcher(gender);
             String gender1 = gender.toLowerCase();
             genderNew=String.valueOf(gender1.charAt(0)).toUpperCase()+gender1.substring(1);
-            if (!matcher.matches()) {
+            if (!Validate.check(gender,REGEX_GENDER)) {
                 check = false;
             } else {
                 check = true;
@@ -572,7 +526,7 @@ public class MainController {
                     System.out.println(e.toString());
                 }
             }
-        } while (!matcher.matches());
+        } while (!Validate.check(gender,REGEX_GENDER));
 
         String id;
         boolean checkIDCustomer=true;
@@ -591,10 +545,7 @@ public class MainController {
                     }
                 }
             }
-
-            pattern = Pattern.compile(REGEX_ID_CUSTOMER);
-            matcher = pattern.matcher(id);
-            if (!matcher.matches()) {
+            if (!Validate.check(id,REGEX_ID_CUSTOMER)) {
                 check = false;
             } else {
                 check = true;
@@ -606,7 +557,7 @@ public class MainController {
                     System.out.println(e.toString());
                 }
             }
-        } while (!matcher.matches() || !checkIDCustomer);
+        } while (!Validate.check(id,REGEX_ID_CUSTOMER) || !checkIDCustomer);
 
         System.out.print("Enter Number Phone of Customer: ");
         String numberPhone = scanner.nextLine();
@@ -615,9 +566,7 @@ public class MainController {
         do {
             System.out.println("Enter Email of Customer: ");
             email = scanner.nextLine();
-            pattern = Pattern.compile(REGEX_EMAIL);
-            matcher = pattern.matcher(email);
-            if (!matcher.matches()) {
+            if (!Validate.check(email,REGEX_EMAIL)) {
                 check = false;
             } else {
                 check = true;
@@ -629,7 +578,7 @@ public class MainController {
                     System.out.println(e.toString());
                 }
             }
-        } while (!matcher.matches());
+        } while (!Validate.check(email,REGEX_EMAIL));
 
         System.out.print("Enter Type of Customer: ");
         String typeCustomer = scanner.nextLine();
@@ -638,7 +587,6 @@ public class MainController {
         String address = scanner.nextLine();
 
         customerList.add(new Customer(name, birthday, id, genderNew, numberPhone, email, typeCustomer, address));
-//
         for (int i = customerList.size() - 1; i < customerList.size(); i++) {
             ReadWriteFile.writerFile(customerList.get(i).getName() + ",", FILE_CUSTOMER);
             ReadWriteFile.writerFile(customerList.get(i).getBirthday() + ",", FILE_CUSTOMER);
@@ -689,7 +637,6 @@ public class MainController {
     }
 
     private static void bookingVilla() {
-
         showInformCustomer();
         System.out.print("Enter choose customer to booking: ");
         int iCustomer = scanner.nextInt();
@@ -709,7 +656,7 @@ public class MainController {
             ReadWriteFile.writerFile(customerList.get(i).getEmail() + ",", FILE_BOOKING);
             ReadWriteFile.writerFile(customerList.get(i).getTypeCustomer() + ",", FILE_BOOKING);
             ReadWriteFile.writerFile(customerList.get(i).getAddress()+",", FILE_BOOKING);
-            ReadWriteFile.writerFile(customerList.get(i).getUserService().getId()+",", FILE_BOOKING);
+            ReadWriteFile.writerFile(customerList.get(i).getUserService().getId()+",",FILE_BOOKING);
             ReadWriteFile.writerFile(customerList.get(i).getUserService().getName(), FILE_BOOKING);
             ReadWriteFile.writerFile("\n", FILE_BOOKING);
         }
@@ -738,6 +685,7 @@ public class MainController {
             ReadWriteFile.writerFile(customerList.get(i).getUserService().getName(), FILE_BOOKING);
             ReadWriteFile.writerFile("\n", FILE_BOOKING);
         }
+        customerListBooking.clear();
     }
 
     private static void bookingRoom() {

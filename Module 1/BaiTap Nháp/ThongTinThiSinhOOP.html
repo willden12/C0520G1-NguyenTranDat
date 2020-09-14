@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Candidade {
+        constructor(mssv, ten, ngaysinh, diemtoan, diemvan, diemanh) {
+            this.mssv = mssv;
+            this.ten = ten;
+            this.ngaysinh = ngaysinh;
+            this.diemtoan = diemtoan;
+            this.diemvan = diemvan;
+            this.diemanh = diemanh;
+        }
+
+        getMssv() {
+            return this.mssv;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        getNgaysinh() {
+            return this.ngaysinh;
+        }
+
+        getDiemtoan() {
+            return this.diemtoan;
+        }
+
+        getDiemvan() {
+            return this.diemvan;
+        }
+
+        getDiemanh() {
+            return this.diemanh;
+        }
+
+        setMssv(mssv) {
+            this.mssv = mssv;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        setNgaysinh(ngaysinh) {
+            this.ngaysinh = ngaysinh;
+        }
+
+        setDiemtoan(diemtoan) {
+            this.diemtoan = diemtoan;
+        }
+
+        setDiemvan(diemvan) {
+            this.diemvan = diemvan;
+        }
+
+        setDiemanh(diemanh) {
+            this.diemanh = diemanh;
+        }
+
+        getTestCandidate() {
+            return this.getDiemtoan() + this.getDiemvan() + this.getDiemanh();
+        }
+    }
+
+    let nhapSoLuong = parseInt(prompt("Nhập số lượng thí sinh"));
+    let liscandidate = " ";
+    for (let i = 0; i < nhapSoLuong; i++) {
+        let candidate = new Candidade();
+        let ten = prompt("Nhập tên" + (i + 1));
+        let mssv = prompt("Nhập mssv");
+        let ngaysinh = prompt("Nhập ngày sinh");
+        let diemtoan = parseFloat(prompt("Nhập điểm toán"));
+        let diemvan = parseFloat(prompt("Nhập điểm văn"));
+        let diemanh = parseFloat(prompt("Nhập điểm anh"));
+
+        candidate.setMssv(mssv);
+        candidate.setTen(ten);
+        candidate.setNgaysinh(ngaysinh);
+        candidate.setDiemtoan(diemtoan);
+        candidate.setDiemvan(diemvan);
+        candidate.setDiemanh(diemanh);
+
+        if (candidate.getTestCandidate() > 15) {
+            liscandidate += "Tên :";
+            liscandidate += candidate.getTen();
+            liscandidate+=" Mssv :";
+            liscandidate += candidate.getMssv();
+            liscandidate+= " Ngày sinh :";
+            liscandidate += candidate.getNgaysinh();
+            liscandidate+= " Điểm toán : ";
+            liscandidate += candidate.getDiemtoan();
+            liscandidate+= " Điểm văn : ";
+            liscandidate += candidate.getDiemvan();
+            liscandidate+= " Điểm anh : ";
+            liscandidate += candidate.getDiemanh();
+            liscandidate+= " Tổng điểm : ";
+            liscandidate += candidate.getTestCandidate();
+            liscandidate += "\n";
+        }
+    }
+    alert(liscandidate)
+
+
+</script>
+
+</body>
+</html>

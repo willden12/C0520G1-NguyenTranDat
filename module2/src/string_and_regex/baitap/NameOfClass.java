@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class NameOfClass {
     private static Pattern pattern;
-    private static final String  NAME_CLASS_REGEX = "^[ACP][0-9]{4}[GHIKLM]$";
+    private static final String  NAME_CLASS_REGEX = "^[ACP][\\d]{4}[GHIKLM]$";
     public NameOfClass() {
         pattern = Pattern.compile(NAME_CLASS_REGEX);
     }

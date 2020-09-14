@@ -1,4 +1,4 @@
-package baithi;
+package baithi.models;
 
 public class Directory {
     String phoneNumber;

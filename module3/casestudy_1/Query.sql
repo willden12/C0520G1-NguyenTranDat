@@ -149,22 +149,90 @@ group by ten_dich_vu_di_kem
 having so_luong_lon_nhat = (select max(so_luong_lon_nhat) from max);
 
 
+-- YÊU CẦU 14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất.
+--  Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLanSuDung.
 
+select hop_dong.id_hop_dong, loai_dich_vu.ten_loai_dich_vu, dich_vu_di_kem.ten_dich_vu_di_kem, count(dich_vu_di_kem.ten_dich_vu_di_kem) as SoLuong
+from hop_dong 
+join dich_vu on dich_vu.id_dich_vu = hop_dong.id_dich_vu
+join loai_dich_vu on loai_dich_vu.id_loai_dich_vu = dich_vu.id_loai_dich_vu
+join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
+join dich_vu_di_kem on dich_vu_di_kem.id_dich_vu_di_kem = hop_dong_chi_tiet.id_dich_vu_di_kem
+group by dich_vu_di_kem.ten_dich_vu_di_kem
+having count(dich_vu_di_kem.ten_dich_vu_di_kem) = 1;
 
+-- YÊU CẦU 15.	Hiển thi thông tin của tất cả nhân viên bao gồm 
+-- IDNhanVien, HoTen, TrinhDo, TenBoPhan, SoDienThoai, DiaChi 
+-- mới chỉ lập được tối đa 3 hợp đồng từ năm 2018 đến 2019.
 
+select nhan_vien.id_nhan_vien, nhan_vien.ho_ten, bo_phan.ten_bo_phan, nhan_vien.sdt, nhan_vien.dia_chi, count(hop_dong.id_nhan_vien)
+from nhan_vien 
+join trinh_do on trinh_do.id_trinh_do = nhan_vien.id_trinh_do
+join bo_phan on bo_phan.id_bo_phan = nhan_vien.id_bo_phan
+join hop_dong on hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
+where year(hop_dong.ngay_lam_hop_dong) in (2018, 2019)
+group by nhan_vien.id_nhan_vien
+having count(hop_dong.id_nhan_vien) <= 3;
 
+-- YÊU CẦU 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
 
+SET FOREIGN_KEY_CHECKS = 0;
+DELETE FROM nhan_vien
+WHERE nhan_vien.id_nhan_vien NOT IN (
+	SELECT id_nhan_vien
+	FROM (
+		SELECT nhan_vien.id_nhan_vien 
+		FROM nhan_vien 
+			JOIN hop_dong ON hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
+		WHERE YEAR(hop_dong.ngay_lam_hop_dong) IN (2017, 2019)) AS abc
+);
+SET FOREIGN_KEY_CHECKS = 1;
 
+-- YÊU CẦU 17.	Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond,
+--  chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.
 
+UPDATE khach_hang
+SET khach_hang.id_loai_khach = 1
+WHERE id_khach_hang IN (
+	SELECT * FROM (SELECT khach_hang.id_khach_hang FROM khach_hang
+		JOIN hop_dong ON hop_dong.id_khach_hang = khach_hang.id_khach_hang
+	WHERE YEAR(hop_dong.ngay_lam_hop_dong) = 2019 AND hop_dong.tong_tien >= 10000000 AND khach_hang.id_loai_khach = 2 ) AS abc
+    );
 
+-- YÊU CẦU 18.	Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràng buộc giữa các bảng).
 
+SET FOREIGN_KEY_CHECKS = 0;
+DELETE FROM khach_hang
+WHERE id_khach_hang IN (
+	SELECT id_khach_hang
+	FROM ( SELECT khach_hang.id_khach_hang FROM khach_hang
+		JOIN hop_dong ON hop_dong.id_khach_hang = khach_hang.id_khach_hang
+	WHERE YEAR(hop_dong.ngay_lam_hop_dong) < 2016) AS abc
+);
+SET FOREIGN_KEY_CHECKS = 1;
 
+-- YÊU CẦU 19.	Cập nhật giá cho các Dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2019 lên gấp đôi.
 
+UPDATE dich_vu_di_kem
+JOIN hop_dong_chi_tiet ON hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
+SET dich_vu_di_kem.gia = dich_vu_di_kem.gia * 2
+WHERE dich_vu_di_kem.gia IN (
+	SELECT abc.gia
+	FROM(SELECT dich_vu_di_kem.gia, dich_vu_di_kem.id_dich_vu_di_kem 
+		 FROM dich_vu_di_kem
+			 JOIN hop_dong_chi_tiet ON hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
+		 GROUP BY dich_vu_di_kem.id_dich_vu_di_kem
+		 HAVING SUM(hop_dong_chi_tiet.so_luong) > 10 ) AS abc
+);
 
+-- YÊU CẦU 20.	Hiển thị thông tin của tất cả các Nhân viên và Khách hàng có trong hệ thống,
+-- thông tin hiển thị bao gồm ID (IDNhanVien, IDKhachHang), HoTen, Email, SoDienThoai, NgaySinh, DiaChi.
 
-
-
-
+SELECT nhan_vien.id_nhan_vien AS 'id', nhan_vien.ho_ten AS 'ho_ten', nhan_vien.email, nhan_vien.sdt, nhan_vien.ngay_sinh, nhan_vien.dia_chi, 'nhân viên' AS 'phan_loai'
+FROM nhan_vien
+UNION
+SELECT khach_hang.id_khach_hang, khach_hang.ho_ten, khach_hang.email, khach_hang.sdt, khach_hang.ngay_sinh, khach_hang.dia_chi, 'khách hàng'
+FROM khach_hang;
 
 
 

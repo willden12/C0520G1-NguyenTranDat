@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84872873-530c-49f0-90e0-a878eb04a669" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CSS/baitap/tao_trang_doc_truyen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thiet_ke_bo_cuc_trang_wed/baitap/tao_layout_html5_css.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thiet_ke_bo_cuc_trang_wed/baitap/tao_layout_voi_RWD.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thiet_ke_bo_cuc_trang_wed/baitap/wed_doc_truyen_ngan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thiet_ke_bo_cuc_trang_wed/thuchanh/rwd_div_css.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thiet_ke_bo_cuc_trang_wed/thuchanh/su_dung_box_model.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thiet_ke_bo_cuc_trang_wed/thuchanh/tao_bo_cuc_co_ban.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thiet_ke_bo_cuc_trang_wed/thuchanh/tao_bo_cuc_fixed_hearder_fixed footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thiet_ke_bo_cuc_trang_wed/thuchanh/tao_menu_doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thiet_ke_bo_cuc_trang_wed/thuchanh/tao_menu_ngang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/baitap/tao_gallery_bang_bootstrrap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/thuchanh/tao_layout_bootstrap.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/baitap/dinh_dang_van_ban_CSS.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/baitap/dinh_dang_van_ban_CSS.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/baitap/tao_trang_doc_truyen.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/baitap/tao_trang_doc_truyen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_1/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_1/Query.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +58,7 @@
       <workItem from="1600657600790" duration="6448000" />
       <workItem from="1600741041503" duration="11681000" />
       <workItem from="1600768511754" duration="1051000" />
+      <workItem from="1600829828966" duration="9962000" />
     </task>
     <servers />
   </component>
@@ -76,5 +70,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="496" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1600677528114" />
+    <state x="420" y="73" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600834096331">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="420" y="73" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1600834096331" />
   </component>
 </project>

@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84872873-530c-49f0-90e0-a878eb04a669" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bootstrap/baitap/tao_gallery_bang_bootstrrap.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bootstrap/thuchanh/tao_layout_bootstrap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/baitap/bootstrap-4.5.2-dist/RE4AX4U.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/baitap/bootstrap-4.5.2-dist/microsoft.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/baitap/bootstrap-4.5.2-dist/tao_gallery_bang_boostrap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/thuchanh/logo-microsoft.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/baitap/tao_trang_doc_truyen.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/baitap/tao_trang_doc_truyen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/casestudy_1/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_1/Query.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/baitap/tao_gallery_bang_bootstrrap.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,9 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bootstrap/baitap/bootstrap-4.5.2-dist" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -44,6 +48,15 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODEGYM\module3\bootstrap\baitap\bootstrap-4.5.2-dist" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODEGYM\module3\bootstrap\baitap\bootstrap-4.5.2-dist" />
+      <recent name="D:\CODEGYM\module3\bootstrap\thuchanh" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -58,7 +71,8 @@
       <workItem from="1600657600790" duration="6448000" />
       <workItem from="1600741041503" duration="11681000" />
       <workItem from="1600768511754" duration="1051000" />
-      <workItem from="1600829828966" duration="9962000" />
+      <workItem from="1600829828966" duration="14803000" />
+      <workItem from="1600910896334" duration="1991000" />
     </task>
     <servers />
   </component>

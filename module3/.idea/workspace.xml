@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84872873-530c-49f0-90e0-a878eb04a669" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bootstrap/baitap/bootstrap-4.5.2-dist/RE4AX4U.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bootstrap/baitap/bootstrap-4.5.2-dist/microsoft.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bootstrap/baitap/bootstrap-4.5.2-dist/tao_gallery_bang_boostrap.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bootstrap/thuchanh/logo-microsoft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo/src/ServletTimeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/baitap/tao_gallery_bang_bootstrrap.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +67,7 @@
       <workItem from="1600741041503" duration="11681000" />
       <workItem from="1600768511754" duration="1051000" />
       <workItem from="1600829828966" duration="14803000" />
-      <workItem from="1600910896334" duration="1991000" />
+      <workItem from="1600910896334" duration="3230000" />
     </task>
     <servers />
   </component>

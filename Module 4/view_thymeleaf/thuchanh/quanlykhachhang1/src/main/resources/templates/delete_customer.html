@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detail customer</title>
+</head>
+<body>
+    <header th:replace="common::headerCustomer"></header>
+        <input type="hidden" th:field="${customerDelete.id}" id="customerId"/>
+        <p>Id: <span  th:text="${customerDelete.id}" ></span></p>
+        <p>Name: <span th:text="${customerDelete.name}"></span> </p>
+        <p>Age: <span th:text="${customerDelete.age}"></span></p>
+
+    <button onclick="deleteCustomer()">Delete</button>
+    <script>
+        function deleteCustomer() {
+            let customerId = document.getElementById("customerId").value;
+            location.href = "/customer/deleteCustomer?id=" + customerId;
+        }
+    </script>
+<!--    <form method="post" action="/customer/deleteCustomer">-->
+<!--        -->
+<!--    </form>-->
+    <footer th:replace="common::footerCustomer"></footer>
+</body>
+</html>

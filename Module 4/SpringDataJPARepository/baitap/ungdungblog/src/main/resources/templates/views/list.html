@@ -31,7 +31,7 @@
         <td th:text="${blog.blogTitle}"></td>
         <td th:text="${blog.blogCreateTime}"></td>
         <td th:text="${blog.blogCreateDate}"></td>
-        <td><a th:href="@{/blog/{id}(id=${blog.blogCategory.categoryId})}" th:text="${blog.blogCategory.categoryName}" ></a></td>
+        <td><a th:href="@{/categories/detail/{id}(id=${blog.blogCategory.categoryId})}" th:text="${blog.blogCategory.categoryName}" ></a></td>
         <td>
             <a th:href="@{/blog/view/{id}(id=${blog.blogId})}">View</a>
         </td>

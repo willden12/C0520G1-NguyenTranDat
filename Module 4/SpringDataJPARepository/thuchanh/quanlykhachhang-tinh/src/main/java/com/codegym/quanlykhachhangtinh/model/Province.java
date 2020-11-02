@@ -8,42 +8,41 @@ import java.util.Set;
 @Table(name = "provinces")
 public class Province {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int provinceId;
+    private String provinceName;
 
-    private String name;
-
-    @OneToMany(mappedBy = "province")
-    private Set<Customer> customers;
+    @OneToMany(targetEntity = Province.class)
+    private List<Province> customers;
 
     public Province() {
     }
 
-    public Province(String name) {
-        this.name = name;
+    public Province(int provinceId, String provinceName) {
+        this.provinceId = provinceId;
+        this.provinceName = provinceName;
     }
 
-    public Long getId() {
-        return id;
+    public int getProvinceId() {
+        return provinceId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setProvinceId(int provinceId) {
+        this.provinceId = provinceId;
     }
 
-    public String getName() {
-        return name;
+    public String getProvinceName() {
+        return provinceName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProvinceName(String provinceName) {
+        this.provinceName = provinceName;
     }
 
-    public Set<Customer> getCustomers() {
+    public List<Province> getCustomers() {
         return customers;
     }
 
-    public void setCustomers(Set<Customer> customers) {
+    public void setCustomers(List<Province> customers) {
         this.customers = customers;
-    }
-}
+    }}

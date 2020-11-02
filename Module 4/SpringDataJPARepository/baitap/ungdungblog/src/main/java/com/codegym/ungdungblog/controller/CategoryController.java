@@ -28,6 +28,13 @@ public class CategoryController {
         ModelAndView modelAndView = new ModelAndView("/category/category-create");
         modelAndView.addObject("category", new Category());
         return  modelAndView;
+
+    }   @GetMapping("/detail/{id}")
+    public ModelAndView showDetail(@PathVariable int id) {
+        ModelAndView modelAndView = new ModelAndView("/category/category-detail");
+        Category category = categoryService.findById(id);
+        modelAndView.addObject("category", categoryService.findById(id));
+        return  modelAndView;
     }
 
     @PostMapping("/save")

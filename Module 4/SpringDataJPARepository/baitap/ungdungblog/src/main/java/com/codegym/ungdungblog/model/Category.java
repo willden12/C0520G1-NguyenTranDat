@@ -11,8 +11,8 @@ public class Category {
     private int categoryId;
     private String categoryName;
 
-    @OneToMany(targetEntity = Blog.class)
-    private List<Blog> CategoryBlogList;
+    @OneToMany(mappedBy = "blogCategory", cascade = CascadeType.REMOVE)
+    private List<Blog> categoryBlogList;
 
     public Category() {
     }
@@ -38,10 +38,10 @@ public class Category {
     }
 
     public List<Blog> getCategoryBlogList() {
-        return CategoryBlogList;
+        return categoryBlogList;
     }
 
     public void setCategoryBlogList(List<Blog> categoryBlogList) {
-        CategoryBlogList = categoryBlogList;
+        this.categoryBlogList = categoryBlogList;
     }
 }

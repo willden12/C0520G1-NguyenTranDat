@@ -1,10 +1,12 @@
 package com.codegym.quanlykhachhangtinh.service.impl;
 
+
 import com.codegym.quanlykhachhangtinh.model.Customer;
-import com.codegym.quanlykhachhangtinh.model.Province;
 import com.codegym.quanlykhachhangtinh.repository.CustomerRepository;
 import com.codegym.quanlykhachhangtinh.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,12 +15,12 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
     @Override
-    public Iterable<Customer> findAll() {
-        return customerRepository.findAll();
+    public Page<Customer> findAll(Pageable pageable) {
+        return customerRepository.findAll(pageable);
     }
 
     @Override
-    public Customer findById(Long id) {
+    public Customer findOne(int id) {
         return customerRepository.findById(id).orElse(null);
     }
 
@@ -27,13 +29,18 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepository.save(customer);
     }
 
+//    @Override
+//    public void edit(Customer customer) {
+//        customerRepository.s(customer);
+//    }
+
     @Override
-    public void remove(Long id) {
+    public void delete(int id) {
         customerRepository.deleteById(id);
     }
 
     @Override
-    public Iterable<Customer> findAllByProvince(Province province) {
-        return customerRepository.findAllByProvince(province);
+    public long size() {
+        return customerRepository.count();
     }
 }

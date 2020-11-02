@@ -1,16 +1,18 @@
 package com.codegym.quanlykhachhangtinh.service;
 
+
 import com.codegym.quanlykhachhangtinh.model.Customer;
-import com.codegym.quanlykhachhangtinh.model.Province;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface CustomerService {
-    Iterable<Customer> findAll();
+    Page<Customer> findAll(Pageable pageable);
 
-    Customer findById(Long id);
+    Customer findOne(int id);
 
     void save(Customer customer);
 
-    void remove(Long id);
+    void delete(int id);
 
-    Iterable<Customer> findAllByProvince(Province province);
+    long size();
 }

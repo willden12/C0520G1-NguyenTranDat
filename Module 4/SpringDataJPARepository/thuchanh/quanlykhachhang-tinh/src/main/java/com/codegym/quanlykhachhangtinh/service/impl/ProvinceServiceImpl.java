@@ -1,5 +1,6 @@
 package com.codegym.quanlykhachhangtinh.service.impl;
 
+
 import com.codegym.quanlykhachhangtinh.model.Province;
 import com.codegym.quanlykhachhangtinh.repository.ProvinceRepository;
 import com.codegym.quanlykhachhangtinh.service.ProvinceService;
@@ -17,7 +18,7 @@ public class ProvinceServiceImpl implements ProvinceService {
     }
 
     @Override
-    public Province findById(Long id) {
+    public Province findOne(int id) {
         return provinceRepository.findById(id).orElse(null);
     }
 
@@ -27,7 +28,7 @@ public class ProvinceServiceImpl implements ProvinceService {
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(int id) {
         provinceRepository.deleteById(id);
     }
 }

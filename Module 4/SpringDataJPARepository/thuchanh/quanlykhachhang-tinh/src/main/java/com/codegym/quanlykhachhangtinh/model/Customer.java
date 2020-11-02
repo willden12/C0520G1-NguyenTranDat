@@ -6,49 +6,64 @@ import javax.persistence.*;
 @Table(name = "customers")
 public class Customer {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
-    private String firstName;
-    private String lastName;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private String name;
+    private String email;
+    private String address;
 
     @ManyToOne
-    @JoinColumn(name = "province_id")
+    @JoinColumn(name = "provinceId")
     private Province province;
 
-    public Customer() {}
-
-    public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Customer() {
     }
 
-    @Override
-    public String toString() {
-        return String.format("Customer[id=%d, firstName='%s', lastName='%s']", id, firstName, lastName);
+    public Customer(String name, String email, String address, Province province) {
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.province = province;
     }
 
-    public Long getId() {
+    public Customer(int id, String name, String email, String address, Province province) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.province = province;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Province getProvince() {
@@ -58,4 +73,23 @@ public class Customer {
     public void setProvince(Province province) {
         this.province = province;
     }
-}
+
+    @Override
+    public Customer clone() {
+        Customer customer = new Customer();
+        customer.setId(id);
+        customer.setName(name);
+        customer.setEmail(email);
+        customer.setAddress(address);
+        return customer;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }}
